@@ -1,0 +1,7 @@
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.FrmForget.resources
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.FrmLogin.resources
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.FrmTN.resources
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.Properties.Resources.resources
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn.csproj.GenerateResource.cache
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.exe.licenses
+E:\KBS\PTPN va UDTM\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
