@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "DoAn_QuanLyShopThoiTrang\GUI.csproj", "{524E4AC5-6E72-4C7A-9C75-9DC6BC8E3690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_DAL", "BLL_DAL\BLL_DAL.csproj", "{67A64D13-F10A-40B0-B6DB-22DE18029B6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{524E4AC5-6E72-4C7A-9C75-9DC6BC8E3690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524E4AC5-6E72-4C7A-9C75-9DC6BC8E3690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524E4AC5-6E72-4C7A-9C75-9DC6BC8E3690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524E4AC5-6E72-4C7A-9C75-9DC6BC8E3690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A64D13-F10A-40B0-B6DB-22DE18029B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A64D13-F10A-40B0-B6DB-22DE18029B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A64D13-F10A-40B0-B6DB-22DE18029B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A64D13-F10A-40B0-B6DB-22DE18029B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3134C1B5-AC7F-40F4-BCFA-7B1536C3E2E9}
+	EndGlobalSection
+EndGlobal
