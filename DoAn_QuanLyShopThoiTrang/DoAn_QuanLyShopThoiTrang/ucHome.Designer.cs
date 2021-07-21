@@ -29,7 +29,6 @@ namespace DoAn_QuanLyShopThoiTrang
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHome));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btnThongTinChiTiet = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
@@ -53,14 +52,16 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.Controls.Add(this.btnThongTinChiTiet);
             this.tablePanel1.Controls.Add(this.pictureEdit2);
             this.tablePanel1.Controls.Add(this.pictureEdit1);
-            this.tablePanel1.Location = new System.Drawing.Point(18, 3);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 101F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 300F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 45F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 308F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 22F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(884, 485);
+            this.tablePanel1.Size = new System.Drawing.Size(917, 528);
             this.tablePanel1.TabIndex = 0;
             // 
             // btnThongTinChiTiet
@@ -68,10 +69,10 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetColumn(this.btnThongTinChiTiet, 2);
             this.tablePanel1.SetColumnSpan(this.btnThongTinChiTiet, 3);
             this.btnThongTinChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThongTinChiTiet.Location = new System.Drawing.Point(342, 404);
+            this.btnThongTinChiTiet.Location = new System.Drawing.Point(354, 434);
             this.btnThongTinChiTiet.Name = "btnThongTinChiTiet";
-            this.tablePanel1.SetRow(this.btnThongTinChiTiet, 2);
-            this.btnThongTinChiTiet.Size = new System.Drawing.Size(145, 39);
+            this.tablePanel1.SetRow(this.btnThongTinChiTiet, 3);
+            this.btnThongTinChiTiet.Size = new System.Drawing.Size(151, 54);
             this.btnThongTinChiTiet.TabIndex = 2;
             this.btnThongTinChiTiet.Text = "Xem thông tin chi tiết";
             this.btnThongTinChiTiet.Click += new System.EventHandler(this.btnThongTinChiTiet_Click);
@@ -81,14 +82,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetColumn(this.pictureEdit2, 4);
             this.tablePanel1.SetColumnSpan(this.pictureEdit2, 2);
             this.pictureEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit2.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.event2;
+            this.pictureEdit2.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.event_360;
             this.pictureEdit2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureEdit2.Location = new System.Drawing.Point(445, 104);
+            this.pictureEdit2.Location = new System.Drawing.Point(461, 104);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.tablePanel1.SetRow(this.pictureEdit2, 1);
-            this.pictureEdit2.Size = new System.Drawing.Size(403, 294);
+            this.pictureEdit2.Size = new System.Drawing.Size(418, 302);
             this.pictureEdit2.TabIndex = 1;
             // 
             // pictureEdit1
@@ -96,14 +97,16 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetColumn(this.pictureEdit1, 1);
             this.tablePanel1.SetColumnSpan(this.pictureEdit1, 2);
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(82, 104);
+            this.pictureEdit1.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.icon_logo;
+            this.pictureEdit1.Location = new System.Drawing.Point(85, 104);
             this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Black;
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.pictureEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.Appearance.Options.UseForeColor = true;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tablePanel1.SetRow(this.pictureEdit1, 1);
-            this.pictureEdit1.Size = new System.Drawing.Size(325, 294);
+            this.pictureEdit1.Size = new System.Drawing.Size(336, 302);
             this.pictureEdit1.TabIndex = 0;
             // 
             // ucHome

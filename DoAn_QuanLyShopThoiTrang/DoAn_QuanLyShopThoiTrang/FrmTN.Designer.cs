@@ -150,6 +150,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLKhachHang.Name = "accordionControlElementQLKhachHang";
             this.accordionControlElementQLKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElementQLKhachHang.Text = "Thêm khách hàng";
+            this.accordionControlElementQLKhachHang.Click += new System.EventHandler(this.accordionControlElementQLKhachHang_Click);
             // 
             // accordionControlElementQLNhanVien
             // 

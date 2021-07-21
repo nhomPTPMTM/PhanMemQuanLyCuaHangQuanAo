@@ -15,7 +15,6 @@ namespace BLL_DAL
         {
             return dbContext.HoaDonBanHangs.Where(hd => hd.MaKhachHang == maKH && hd.TrangThai == false);
         }
-
         public IQueryable<HoaDonBanHang> getBillsSolded()
         {
             return dbContext.HoaDonBanHangs.Where(hd => hd.TrangThai == true);
@@ -173,6 +172,11 @@ namespace BLL_DAL
             catch {
                 return false;
             }
+        }
+
+        public ChiTietDonBanHang GetChiTietDonBanHang(string MaDH,string MaSP)
+        {
+            return dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
         }
     }
 

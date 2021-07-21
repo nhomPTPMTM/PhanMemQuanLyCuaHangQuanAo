@@ -58,17 +58,6 @@ namespace DoAn_QuanLyShopThoiTrang
             listSanPham = sanPhamBLL.loadSanPham_ForLoai(maLoai).ToList<SanPham>();
             maDM = loaiSanPham.load_MaDanhMuc(maLoai);
             gridControl1.DataSource = listSanPham;
-            
-
-            if (gridView1.Columns.Count > 6)
-            {
-                gridView1.Columns.RemoveAt(11);
-                gridView1.Columns.RemoveAt(10);
-                gridView1.Columns.RemoveAt(9);
-                gridView1.Columns.RemoveAt(8);
-                gridView1.Columns.RemoveAt(5);
-                gridView1.Columns.RemoveAt(4);
-            }
 
             string ID = gridView1.GetFocusedRowCellValue("MaSanPham").ToString();
             selectedSanPham = sanPhamBLL.detailSanpham(ID);
@@ -251,10 +240,6 @@ namespace DoAn_QuanLyShopThoiTrang
             if (MaDonHangLookUpEdit.EditValue != null){ 
             grvCTHoaDon.DataSource = null;
             grvCTHoaDon.DataSource = hoaDonBLL_DAL.loadCTDonBanHang(MaDonHangLookUpEdit.EditValue.ToString());
-            gridView2.Columns["Size"].Visible = false;
-            gridView2.Columns["MauSac"].Visible = false;
-            gridView2.Columns["SanPham"].Visible = false;
-            gridView2.Columns["HoaDonBanHang"].Visible = false;
             }
         }
 
@@ -282,6 +267,11 @@ namespace DoAn_QuanLyShopThoiTrang
                 load_grvChiTietHoaDon();
 
             }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

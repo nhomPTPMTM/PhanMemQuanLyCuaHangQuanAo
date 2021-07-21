@@ -38,35 +38,46 @@ namespace DoAn_QuanLyShopThoiTrang
         private void gridView1_MasterRowExpanded(object sender, DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventArgs e)
         {
             dView = gridView1.GetDetailView(e.RowHandle, (sender as GridView).GetVisibleDetailRelationIndex(e.RowHandle)) as GridView;
+            dView.Columns["Size"].Visible = false;
+            dView.Columns["MauSac"].Visible = false;
             dView.FocusedRowChanged += DView_FocusedRowChanged;
             lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
 
             SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
-            setupPanelProduct(sp);
+            ChiTietDonBanHang chiTiet = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
+            setupPanelProduct(sp,chiTiet);
         }
 
         private void DView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            dView.Columns["Size"].Visible = false;
+            dView.Columns["MauSac"].Visible = false;
             if (dView==null||dView.GetFocusedRowCellValue("MaSanPham") != null)
             {
                 lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
                 SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
-                setupPanelProduct(sp);
+                ChiTietDonBanHang chiTiet = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
+                setupPanelProduct(sp, chiTiet);
             }
         }
 
         private void grv_HoaDonDaBan_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
             dView = grv_HoaDonDaBan.FocusedView as GridView;
-            if(dView != null || dView.GetFocusedRowCellValue("MaSanPham")!=null)
+            if (dView == null)
+            {
+                return;
+            }
+            if (dView.GetFocusedRowCellValue("MaSanPham")!=null)
             {
                 lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
                 SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
-                setupPanelProduct(sp);
+                ChiTietDonBanHang chiTiet = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
+                setupPanelProduct(sp, chiTiet);
             }
             
         }
-        private void setupPanelProduct(SanPham sanpham)
+        private void setupPanelProduct(SanPham sanpham,ChiTietDonBanHang ct)
         {
             if (sanpham.DanhMucHinhs.Count > 0)
             {
@@ -76,9 +87,8 @@ namespace DoAn_QuanLyShopThoiTrang
 
             lblTenSP.Text = sanpham.TenSanPham;
             lblDonGia.Text = sanpham.DonGia + " VND";
-            lblSoLuong.Text = sanpham.SoLuongTon + "";
+            lblSoLuong.Text = ct.SoLuongMua + "";
             string trangthai = sanpham.TrangThai == true ? "Còn Hàng" : "Hết Hàng";
-            lblTrangThai.Text = trangthai;
             memoEditMoTa.Text = sanpham.MoTa;
         }
     }

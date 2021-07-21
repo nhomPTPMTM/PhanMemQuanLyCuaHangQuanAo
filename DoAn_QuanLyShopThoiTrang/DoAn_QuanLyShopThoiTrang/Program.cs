@@ -15,6 +15,7 @@ namespace DoAn_QuanLyShopThoiTrang
         public static FrmLogin frmLogin = null;
         public static string linkURL_SanPham = "E:\\KBS\\PTPN va UDTM\\DoAn_QuanLyShopThoiTrang\\Image\\";
         public static string linkURL_LoaiSP = "E:\\KBS\\PTPN va UDTM\\DoAn_QuanLyShopThoiTrang\\Icon\\";
+        public static string linkURL_KhachHang = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\KhachHang";
         public static FrmTN frmTN = null;
         public static string MaKH="";
         public static string MaHD = "";
