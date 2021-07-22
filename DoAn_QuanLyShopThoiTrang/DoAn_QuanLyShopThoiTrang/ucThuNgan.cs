@@ -113,7 +113,7 @@ namespace DoAn_QuanLyShopThoiTrang
                 hd.MaDonHang = "HD001";
                 hd.MaKhachHang = MaKhachHangLookUpEdit.EditValue.ToString();
                 hd.NgayTao = DateTime.Now;
-                hd.MaNhanVien = DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.MaNV;
+                hd.MaNhanVien = Program.MaNV;
                 hd.TrangThai = false;
                 hd.ThanhTien = 0;
             }
@@ -123,7 +123,7 @@ namespace DoAn_QuanLyShopThoiTrang
                 hd.MaDonHang = "HD00"+(STT+1);
                 hd.MaKhachHang = MaKhachHangLookUpEdit.EditValue.ToString();
                 hd.NgayTao = DateTime.Now;
-                hd.MaNhanVien = DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.MaNV;
+                hd.MaNhanVien = Program.MaNV;
                 hd.TrangThai = false;
                 hd.ThanhTien = 0;
             }

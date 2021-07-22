@@ -208,3 +208,5 @@ E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopTho
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\bin\Debug\es\DevExpress.Dialogs.v19.2.Core.resources.dll
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\bin\Debug\ja\DevExpress.Dialogs.v19.2.Core.resources.dll
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\bin\Debug\ru\DevExpress.Dialogs.v19.2.Core.resources.dll
+E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.ucThongTinNhanVien.resources
+E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.ucHoaDonDangTao.resources

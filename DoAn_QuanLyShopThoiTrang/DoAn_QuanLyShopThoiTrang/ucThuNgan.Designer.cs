@@ -105,6 +105,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.ItemForThanhTien = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForKhuyenMai = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCTHoaDon)).BeginInit();
@@ -142,6 +145,9 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -729,6 +735,13 @@ namespace DoAn_QuanLyShopThoiTrang
             this.MaDonHangLookUpEdit.Name = "MaDonHangLookUpEdit";
             this.MaDonHangLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.MaDonHangLookUpEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaDonHang", "Ma Don Hang", 87, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaKhachHang", "Ma Khach Hang", 84, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MaNhanVien", "Ma Nhan Vien", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NgayTao", "Ngay Tao", 56, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ThanhTien", "Thanh Tien", 63, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KhuyenMai", "Khuyen Mai", 65, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.MaDonHangLookUpEdit.Properties.DataSource = this.hoaDonBanHangBindingSource;
             this.MaDonHangLookUpEdit.Properties.DisplayMember = "MaDonHang";
             this.MaDonHangLookUpEdit.Properties.NullText = "";
@@ -790,9 +803,9 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // btnThemHoaDon
             // 
-            this.btnThemHoaDon.Location = new System.Drawing.Point(436, 141);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(566, 141);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(384, 22);
+            this.btnThemHoaDon.Size = new System.Drawing.Size(143, 22);
             this.btnThemHoaDon.StyleController = this.dataLayoutControl1;
             this.btnThemHoaDon.TabIndex = 12;
             this.btnThemHoaDon.Text = "Tạo mới";
@@ -800,19 +813,19 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // btnXoaChiTiet
             // 
-            this.btnXoaChiTiet.Location = new System.Drawing.Point(436, 167);
+            this.btnXoaChiTiet.Location = new System.Drawing.Point(566, 167);
             this.btnXoaChiTiet.Name = "btnXoaChiTiet";
-            this.btnXoaChiTiet.Size = new System.Drawing.Size(384, 22);
+            this.btnXoaChiTiet.Size = new System.Drawing.Size(143, 22);
             this.btnXoaChiTiet.StyleController = this.dataLayoutControl1;
             this.btnXoaChiTiet.TabIndex = 13;
-            this.btnXoaChiTiet.Text = "Xóa chi tiết";
+            this.btnXoaChiTiet.Text = "Xóa chi tiết hóa đơn";
             this.btnXoaChiTiet.Click += new System.EventHandler(this.btnDeleteChiTiet_Click);
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(436, 193);
+            this.btnThanhToan.Location = new System.Drawing.Point(566, 251);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(384, 22);
+            this.btnThanhToan.Size = new System.Drawing.Size(143, 22);
             this.btnThanhToan.StyleController = this.dataLayoutControl1;
             this.btnThanhToan.TabIndex = 14;
             this.btnThanhToan.Text = "Thanh toán";
@@ -851,7 +864,10 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlItem5,
             this.ItemForThanhTien,
             this.layoutControlItem1,
-            this.ItemForKhuyenMai});
+            this.ItemForKhuyenMai,
+            this.emptySpaceItem1,
+            this.emptySpaceItem2,
+            this.emptySpaceItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(412, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
             this.layoutControlGroup1.OptionsTableLayoutItem.ColumnIndex = 1;
@@ -870,33 +886,33 @@ namespace DoAn_QuanLyShopThoiTrang
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnThemHoaDon;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem3.Location = new System.Drawing.Point(130, 96);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem3.Size = new System.Drawing.Size(388, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(147, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnXoaChiTiet;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 122);
+            this.layoutControlItem4.Location = new System.Drawing.Point(130, 122);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem4.Size = new System.Drawing.Size(388, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(147, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnThanhToan;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 148);
+            this.layoutControlItem5.Location = new System.Drawing.Point(130, 206);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem5.Size = new System.Drawing.Size(388, 84);
+            this.layoutControlItem5.Size = new System.Drawing.Size(147, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -930,6 +946,30 @@ namespace DoAn_QuanLyShopThoiTrang
             this.ItemForKhuyenMai.Size = new System.Drawing.Size(388, 24);
             this.ItemForKhuyenMai.Text = "Khuyen Mai";
             this.ItemForKhuyenMai.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(130, 148);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(147, 58);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(277, 96);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(111, 136);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 96);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(130, 136);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
@@ -990,6 +1030,9 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1070,5 +1113,8 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraGrid.Columns.GridColumn colHoaDonBanHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSanPham;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
     }
 }

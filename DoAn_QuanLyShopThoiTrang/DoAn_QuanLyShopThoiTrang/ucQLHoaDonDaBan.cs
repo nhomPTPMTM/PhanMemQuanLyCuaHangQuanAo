@@ -38,8 +38,11 @@ namespace DoAn_QuanLyShopThoiTrang
         private void gridView1_MasterRowExpanded(object sender, DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventArgs e)
         {
             dView = gridView1.GetDetailView(e.RowHandle, (sender as GridView).GetVisibleDetailRelationIndex(e.RowHandle)) as GridView;
-            dView.Columns["Size"].Visible = false;
-            dView.Columns["MauSac"].Visible = false;
+            //dView.Columns["Size"].Visible = false;
+            //dView.Columns["MauSac"].Visible = false;
+            //dView.Columns["SanPham"].Visible = false;
+            //dView.Columns["HoaDonBanHang"].Visible = false;
+            setupDetailGridView();
             dView.FocusedRowChanged += DView_FocusedRowChanged;
             lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
 
@@ -50,8 +53,7 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void DView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            dView.Columns["Size"].Visible = false;
-            dView.Columns["MauSac"].Visible = false;
+            setupDetailGridView();
             if (dView==null||dView.GetFocusedRowCellValue("MaSanPham") != null)
             {
                 lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
@@ -68,6 +70,7 @@ namespace DoAn_QuanLyShopThoiTrang
             {
                 return;
             }
+            setupDetailGridView();
             if (dView.GetFocusedRowCellValue("MaSanPham")!=null)
             {
                 lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
@@ -90,6 +93,13 @@ namespace DoAn_QuanLyShopThoiTrang
             lblSoLuong.Text = ct.SoLuongMua + "";
             string trangthai = sanpham.TrangThai == true ? "Còn Hàng" : "Hết Hàng";
             memoEditMoTa.Text = sanpham.MoTa;
+        }
+        private void setupDetailGridView()
+        {
+            dView.Columns["Size"].Visible = false;
+            dView.Columns["MauSac"].Visible = false;
+            dView.Columns["SanPham"].Visible = false;
+            dView.Columns["HoaDonBanHang"].Visible = false;
         }
     }
 }

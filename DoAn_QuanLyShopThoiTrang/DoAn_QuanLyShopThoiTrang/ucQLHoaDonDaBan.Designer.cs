@@ -30,7 +30,7 @@ namespace DoAn_QuanLyShopThoiTrang
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQLHoaDonDaBan));
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,10 +100,10 @@ namespace DoAn_QuanLyShopThoiTrang
             this.grv_HoaDonDaBan.DataMember = null;
             this.grv_HoaDonDaBan.DataSource = this.hoaDonBanHangsBindingSource;
             this.grv_HoaDonDaBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.LevelTemplate = this.gridView2;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.LevelTemplate = this.gridView2;
+            gridLevelNode1.RelationName = "Level1";
             this.grv_HoaDonDaBan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.grv_HoaDonDaBan.Location = new System.Drawing.Point(2, 23);
             this.grv_HoaDonDaBan.MainView = this.gridView1;
             this.grv_HoaDonDaBan.Name = "grv_HoaDonDaBan";
@@ -134,6 +134,8 @@ namespace DoAn_QuanLyShopThoiTrang
             this.colGhiChu});
             this.gridView1.GridControl = this.grv_HoaDonDaBan;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.FindDelay = 100;
+            this.gridView1.OptionsFind.SearchInPreview = true;
             this.gridView1.MasterRowExpanded += new DevExpress.XtraGrid.Views.Grid.CustomMasterRowEventHandler(this.gridView1_MasterRowExpanded);
             // 
             // colMaDonHang

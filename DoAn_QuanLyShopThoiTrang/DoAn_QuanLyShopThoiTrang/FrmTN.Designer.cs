@@ -213,6 +213,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Đơn hàng đang tạo";
+            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // accordionControlElementSanPham
             // 
@@ -246,6 +247,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Tài khoản";
+            this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
             // 
             // accordionControlElementLogOut
             // 

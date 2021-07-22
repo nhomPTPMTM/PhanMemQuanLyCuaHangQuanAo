@@ -286,5 +286,24 @@ namespace DoAn_QuanLyShopThoiTrang
             ucThemKhachHang.Dock = DockStyle.Fill;
             this.container.Controls.Add(ucThemKhachHang);
         }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucThongTinNhanVien uc = new ucThongTinNhanVien();
+            uc.Dock = DockStyle.Fill;
+            this.container.Controls.Add(uc);
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucHoaDonDangTao uc = new ucHoaDonDangTao();
+            this.container.Controls.Add(uc);
+        }
     }
 }

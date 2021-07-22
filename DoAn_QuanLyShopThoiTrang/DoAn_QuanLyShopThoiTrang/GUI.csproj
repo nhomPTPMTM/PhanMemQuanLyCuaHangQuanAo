@@ -80,6 +80,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetupControls.cs" />
+    <Compile Include="ucHoaDonDangTao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHoaDonDangTao.Designer.cs">
+      <DependentUpon>ucHoaDonDangTao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     </Compile>
     <Compile Include="ucThemKhachHang.Designer.cs">
       <DependentUpon>ucThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTinNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTinNhanVien.Designer.cs">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="ucThuNgan.cs">
       <SubType>UserControl</SubType>
@@ -136,6 +148,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucHoaDonDangTao.resx">
+      <DependentUpon>ucHoaDonDangTao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucHome.resx">
       <DependentUpon>ucHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucThemKhachHang.resx">
       <DependentUpon>ucThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTinNhanVien.resx">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucThuNgan.resx">
       <DependentUpon>ucThuNgan.cs</DependentUpon>
