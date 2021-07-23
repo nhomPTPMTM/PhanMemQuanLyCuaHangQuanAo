@@ -19,6 +19,10 @@ namespace BLL_DAL
         {
             return dbContext.HoaDonBanHangs.Where(hd => hd.TrangThai == true);
         }
+        public IQueryable<HoaDonBanHang> getBillsCreating()
+        {
+            return dbContext.HoaDonBanHangs.Where(hd => hd.TrangThai == false);
+        }
 
         public HoaDonBanHang getSelectedHD(string maHD)
         {
@@ -177,6 +181,29 @@ namespace BLL_DAL
         public ChiTietDonBanHang GetChiTietDonBanHang(string MaDH,string MaSP)
         {
             return dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
+        }
+        public bool Update_SoLuongMua(string MaDH, string MaSP,int soLuong)
+        {
+            try {
+                ChiTietDonBanHang ctbh= dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
+                
+                HoaDonBanHang hd= dbContext.HoaDonBanHangs.SingleOrDefault(h=>h.MaDonHang==MaDH);
+                if (ctbh.SoLuongMua < soLuong)
+                {
+                    hd.ThanhTien = hd.ThanhTien + (ctbh.DonGiaBan * (soLuong - ctbh.SoLuongMua));
+                }
+                else if (ctbh.SoLuongMua > soLuong)
+                {
+                    hd.ThanhTien = hd.ThanhTien - (ctbh.DonGiaBan * (ctbh.SoLuongMua - soLuong));
+                }
+                ctbh.SoLuongMua = soLuong;
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch {
+                return false;
+            }
+            
         }
     }
 

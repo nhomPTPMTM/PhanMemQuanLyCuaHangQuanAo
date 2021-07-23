@@ -91,7 +91,6 @@ namespace DoAn_QuanLyShopThoiTrang
             lblTenSP.Text = sanpham.TenSanPham;
             lblDonGia.Text = sanpham.DonGia + " VND";
             lblSoLuong.Text = ct.SoLuongMua + "";
-            string trangthai = sanpham.TrangThai == true ? "Còn Hàng" : "Hết Hàng";
             memoEditMoTa.Text = sanpham.MoTa;
         }
         private void setupDetailGridView()

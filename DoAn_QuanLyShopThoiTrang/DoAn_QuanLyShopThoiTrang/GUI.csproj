@@ -59,6 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbQLShopQuanAoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmForget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +177,17 @@
     <EmbeddedResource Include="WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dbQLShopQuanAoDataSet.xsc">
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbQLShopQuanAoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbQLShopQuanAoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbQLShopQuanAoDataSet.xss">
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\BLL_DAL.HoaDonBanHang.datasource" />
     <None Include="Properties\DataSources\BLL_DAL.SanPham.datasource" />
     <None Include="Properties\Settings.settings">

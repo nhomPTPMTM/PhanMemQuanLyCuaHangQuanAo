@@ -57,7 +57,9 @@ namespace DoAn_QuanLyShopThoiTrang
             listSanPham = null;
             listSanPham = sanPhamBLL.loadSanPham_ForLoai(maLoai).ToList<SanPham>();
             maDM = loaiSanPham.load_MaDanhMuc(maLoai);
-            gridControl1.DataSource = listSanPham;
+            sanPhamBindingSource.DataSource = listSanPham;
+            gridControl1.DataSource = sanPhamBindingSource.DataSource;
+            
 
             string ID = gridView1.GetFocusedRowCellValue("MaSanPham").ToString();
             selectedSanPham = sanPhamBLL.detailSanpham(ID);

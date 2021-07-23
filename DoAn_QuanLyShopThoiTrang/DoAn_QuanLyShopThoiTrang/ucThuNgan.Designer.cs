@@ -53,6 +53,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbQLShopQuanAoDataSet = new DoAn_QuanLyShopThoiTrang.dbQLShopQuanAoDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,6 +117,7 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbQLShopQuanAoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -302,6 +304,11 @@ namespace DoAn_QuanLyShopThoiTrang
             // sanPhamBindingSource
             // 
             this.sanPhamBindingSource.DataSource = typeof(BLL_DAL.SanPham);
+            // 
+            // dbQLShopQuanAoDataSet
+            // 
+            this.dbQLShopQuanAoDataSet.DataSetName = "dbQLShopQuanAoDataSet";
+            this.dbQLShopQuanAoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -999,6 +1006,7 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbQLShopQuanAoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -1116,5 +1124,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private dbQLShopQuanAoDataSet dbQLShopQuanAoDataSet;
     }
 }
