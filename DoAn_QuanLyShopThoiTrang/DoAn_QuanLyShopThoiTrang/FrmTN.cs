@@ -190,7 +190,7 @@ namespace DoAn_QuanLyShopThoiTrang
             ucHome ucHome = new ucHome();
             ucHome.Dock = DockStyle.Fill;
             this.container.Controls.Add(ucHome);
-            List<ChiTietPhanQuyen> lst = nhanVienBLL_DAL.GetDMManHinhs(DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.MaNV);
+            List<ChiTietPhanQuyen> lst = nhanVienBLL_DAL.GetDMManHinhs(Program.MaNV);
             foreach (ChiTietPhanQuyen i in lst)
             {
                 FindMenuPhanQuyen(this.accordionControl1, i.MaManHinh, Convert.ToBoolean(i.CoQuyen));

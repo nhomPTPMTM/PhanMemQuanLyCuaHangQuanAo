@@ -120,6 +120,10 @@ namespace DoAn_QuanLyShopThoiTrang
             if (hoaDonBLL_DAL.Update_SoLuongMua(chiTietDonBan.MaDonHang, chiTietDonBan.MaSanPham, int.Parse(spinEditSoLuong.Text)))
             {
                 MessageBox.Show("Cập nhật thành công");
+                if (gridView1.GetFocusedRowCellValue("MaDonHang") != null)
+                {
+                    txtThanhTien.EditValue = gridView1.GetFocusedRowCellValue("ThanhTien").ToString();
+                }
             }
         }
 
@@ -150,6 +154,15 @@ namespace DoAn_QuanLyShopThoiTrang
             {
                 MessageBox.Show("Thanh toán thành công");
                 grv_HoaDon.DataSource= grv_HoaDon.DataSource = hoaDonBLL_DAL.getBillsCreating();
+            }
+        }
+
+        private void spinEditKhuyenMai_EditValueChanged(object sender, EventArgs e)
+        {
+            if ((double)spinEditKhuyenMai.Value > 0)
+            {
+                double thanhTien = (double)hoaDonBLL_DAL.getSelectedHD(lblMaDH.Text).ThanhTien;
+                txtThanhTien.Text = (thanhTien * (100 - (double)spinEditKhuyenMai.Value) / 100) + "";
             }
         }
     }

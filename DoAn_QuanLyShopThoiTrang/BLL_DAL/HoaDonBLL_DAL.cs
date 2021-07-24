@@ -149,8 +149,9 @@ namespace BLL_DAL
                         return false;
                     }
                 }
+                
             }
-            catch(Exception e)
+            catch
             {
                 return false;
             }
@@ -188,13 +189,16 @@ namespace BLL_DAL
                 ChiTietDonBanHang ctbh= dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
                 
                 HoaDonBanHang hd= dbContext.HoaDonBanHangs.SingleOrDefault(h=>h.MaDonHang==MaDH);
+                SanPham sp = dbContext.SanPhams.SingleOrDefault(s => s.MaSanPham == ctbh.MaSanPham);
                 if (ctbh.SoLuongMua < soLuong)
                 {
                     hd.ThanhTien = hd.ThanhTien + (ctbh.DonGiaBan * (soLuong - ctbh.SoLuongMua));
+                    sp.SoLuongTon = sp.SoLuongTon - (soLuong - ctbh.SoLuongMua);
                 }
                 else if (ctbh.SoLuongMua > soLuong)
                 {
                     hd.ThanhTien = hd.ThanhTien - (ctbh.DonGiaBan * (ctbh.SoLuongMua - soLuong));
+                    sp.SoLuongTon = sp.SoLuongTon + (ctbh.SoLuongMua - soLuong);
                 }
                 ctbh.SoLuongMua = soLuong;
                 dbContext.SubmitChanges();

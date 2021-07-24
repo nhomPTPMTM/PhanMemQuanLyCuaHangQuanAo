@@ -33,6 +33,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnThongTinChiTiet = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.lblWelcome = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
@@ -49,6 +50,7 @@ namespace DoAn_QuanLyShopThoiTrang
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 16.75F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 126.43F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 11.85F)});
+            this.tablePanel1.Controls.Add(this.lblWelcome);
             this.tablePanel1.Controls.Add(this.btnThongTinChiTiet);
             this.tablePanel1.Controls.Add(this.pictureEdit2);
             this.tablePanel1.Controls.Add(this.pictureEdit1);
@@ -109,6 +111,23 @@ namespace DoAn_QuanLyShopThoiTrang
             this.pictureEdit1.Size = new System.Drawing.Size(336, 302);
             this.pictureEdit1.TabIndex = 0;
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Appearance.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Appearance.Options.UseFont = true;
+            this.lblWelcome.Appearance.Options.UseTextOptions = true;
+            this.lblWelcome.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblWelcome.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.tablePanel1.SetColumn(this.lblWelcome, 1);
+            this.tablePanel1.SetColumnSpan(this.lblWelcome, 5);
+            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWelcome.Location = new System.Drawing.Point(85, 3);
+            this.lblWelcome.Name = "lblWelcome";
+            this.tablePanel1.SetRow(this.lblWelcome, 0);
+            this.lblWelcome.Size = new System.Drawing.Size(794, 95);
+            this.lblWelcome.TabIndex = 3;
+            this.lblWelcome.Text = "Chào mừng";
+            // 
             // ucHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +137,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.Size = new System.Drawing.Size(917, 528);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -130,5 +150,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraEditors.SimpleButton btnThongTinChiTiet;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.LabelControl lblWelcome;
     }
 }

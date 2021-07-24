@@ -186,7 +186,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.spinEditKhuyenMai.Name = "spinEditKhuyenMai";
             this.spinEditKhuyenMai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEditKhuyenMai.Properties.Mask.EditMask = "p0";
+            this.spinEditKhuyenMai.Properties.Mask.EditMask = "P0";
             this.spinEditKhuyenMai.Properties.MaxValue = new decimal(new int[] {
             100,
             0,
@@ -195,6 +195,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRow(this.spinEditKhuyenMai, 12);
             this.spinEditKhuyenMai.Size = new System.Drawing.Size(160, 24);
             this.spinEditKhuyenMai.TabIndex = 16;
+            this.spinEditKhuyenMai.EditValueChanged += new System.EventHandler(this.spinEditKhuyenMai_EditValueChanged);
             // 
             // txtThanhTien
             // 
@@ -355,7 +356,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.memoEditMoTa.Enabled = false;
             this.memoEditMoTa.Location = new System.Drawing.Point(343, 152);
             this.memoEditMoTa.Name = "memoEditMoTa";
-            this.memoEditMoTa.Properties.ReadOnly = true;
             this.tablePanel2.SetRow(this.memoEditMoTa, 4);
             this.tablePanel2.SetRowSpan(this.memoEditMoTa, 2);
             this.memoEditMoTa.Size = new System.Drawing.Size(250, 137);

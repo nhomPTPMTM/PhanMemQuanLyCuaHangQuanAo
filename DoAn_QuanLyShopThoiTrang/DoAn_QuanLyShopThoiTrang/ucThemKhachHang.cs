@@ -69,9 +69,15 @@ namespace DoAn_QuanLyShopThoiTrang
             }
             else
             {
-                int maSo = int.Parse(KhachHangBLL_DAL.getLastKH().MaKhachHang.Substring(4));
-                maKH = "KH00" + ( maSo + 1);
-               
+                int maSo = int.Parse(KhachHangBLL_DAL.getLastKH().MaKhachHang.Substring(3));
+                if (maSo < 10)
+                {
+                    maKH = "KH00" + (maSo + 1);
+                }
+                else {
+                    maKH = "KH0" + (maSo + 1);
+                }
+
             }
             return maKH;
         }

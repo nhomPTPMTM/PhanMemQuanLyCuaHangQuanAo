@@ -26,9 +26,9 @@ namespace DoAn_QuanLyShopThoiTrang
         {
             NhanVien nv = nhanVienBLL_DAL.detailNhanVien(Program.MaNV);
 
-            setup.setupPicture(picNhanVien, Program.linkURL_Image + "\\nhanvien\\" + nv.HinhAnh);
+            setup.setupPicture(picNhanVien, Program.linkURL_Image + "nhanvien\\" + nv.HinhAnh);
             lblTenNV.Text = nv.TenNhanVien;
-            lblNgaySinh.Text = nv.NgaySinh.Value.ToString();
+            lblNgaySinh.Text = nv.NgaySinh.Value.ToString("dd/MM/yyyy");
             lblGioiTinh.Text = nv.GioiTinh;
             lblCMND.Text = nv.CMND;
             lblDienThoai.Text = nv.SoDienThoai;

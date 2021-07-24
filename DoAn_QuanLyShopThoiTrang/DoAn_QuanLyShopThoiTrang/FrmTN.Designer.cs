@@ -149,7 +149,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLKhachHang.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementQLKhachHang.Name = "accordionControlElementQLKhachHang";
             this.accordionControlElementQLKhachHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementQLKhachHang.Tag = "MH004";
             this.accordionControlElementQLKhachHang.Text = "Thêm khách hàng";
+            this.accordionControlElementQLKhachHang.Visible = false;
             this.accordionControlElementQLKhachHang.Click += new System.EventHandler(this.accordionControlElementQLKhachHang_Click);
             // 
             // accordionControlElementQLNhanVien
@@ -161,6 +163,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLNhanVien.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementQLNhanVien.Name = "accordionControlElementQLNhanVien";
             this.accordionControlElementQLNhanVien.Text = "Quản lý nhân viên";
+            this.accordionControlElementQLNhanVien.Visible = false;
             // 
             // accordionControlElement9
             // 
@@ -223,7 +226,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementSanPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSanPham.ImageOptions.Image")));
             this.accordionControlElementSanPham.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementSanPham.Name = "accordionControlElementSanPham";
+            this.accordionControlElementSanPham.Tag = "MH003";
             this.accordionControlElementSanPham.Text = "Quản lý kho hàng";
+            this.accordionControlElementSanPham.Visible = false;
             // 
             // accordionControlElement7
             // 
