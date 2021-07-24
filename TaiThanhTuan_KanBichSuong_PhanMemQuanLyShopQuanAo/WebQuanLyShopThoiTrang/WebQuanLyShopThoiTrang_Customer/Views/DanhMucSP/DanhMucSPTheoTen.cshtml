@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "DanhMucSPTheoTen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebQuanLyShopThoiTrang_Customer.Controllers
+<style>
+    .lsp .anhsp {
+        width: 200px;
+        height: 230px;
+        border: 1px solid black;
+    }
+
+        .lsp .anhsp:hover {
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+</style>
+@using WebQuanLyShopThoiTrang_Customer.Models;
+@model List<SanPham>
+
+<div class="row" style="background-color:lightblue">
+    @{
+        <h2 class="mt-4 btn-block" style="color:Background;font-weight:bold;text-align:center">@ViewBag.TenDM</h2>
+        foreach (var item in Model)
+        {
+            <div class="col-4 text-center">
+                <a class="lsp" href="@Url.Action("XemChiTiet","SanPham", new { @maSP=item.MaSanPham})"><img class="anhsp mt-2" src="@Url.Content("~/Images/"+ViewBag.MaDM+"/"+item.MaLoaiSanPham+"/"+item.TenSanPham+"/"+item.DanhMucHinhs.First().TenHinh)" width="95%" height="200px" alt="Image" /></a>
+                @*Ten sach chi hien thi khong qua 30 ky tu*@
+                @if (item.TenSanPham.Length > 50)
+                {
+                    <p><strong title="@item.TenSanPham">@item.TenSanPham.Substring(0, 30)...</strong></p>
+                    <p>Giá: <b style="color:red">@item.DonGia vnđ</b></p>
+                    <a href="@Url.Action("XemChiTiet","SanPham", new { @maSP=item.MaSanPham})" style="color:lightcoral">Xem chi tiết</a>
+                    <br />
+                }
+                else
+                {
+                    <p><strong title="@item.TenSanPham">@item.TenSanPham</strong></p>
+                    <p>Giá: <b style="color:red">@item.DonGia vnđ</b></p>
+                    <a href="@Url.Action("XemChiTiet","SanPham", new { @maSP=item.TenSanPham})">Xem chi tiết</a>
+                    <br />
+                }
+                <div class="clear"></div>
+            </div>
+        }
+    }
+</div>

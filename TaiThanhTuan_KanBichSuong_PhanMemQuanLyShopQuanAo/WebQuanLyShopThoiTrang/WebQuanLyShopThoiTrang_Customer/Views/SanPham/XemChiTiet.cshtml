@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using WebQuanLyShopThoiTrang_Customer.Controllers
+@model WebQuanLyShopThoiTrang_Customer.Models.SanPham
+<h2 style="color:Background;text-align:center;font-weight:bold;margin-top:30px">Xem chi tiết sản phẩm</h2>
+
+<div class="card border-dark">
+    <table class="border-dark mx-3 mb-3 mt-3" style="color:black;">
+        <tr class="text-left">
+            <td rowspan="5" width="45%">
+                <img class="card-header" src="~/images/@Model._AnhChinh.First()" width="85%" height="130%" style="border:1px solid #000" alt="@Model.TenSanPham">
+            </td>
+            <td width="20%">Tên Sản Phẩm</td>
+            <td width="35%" style="font-weight:bold; color:blue;">@Model.TenSanPham</td>
+        </tr>
+        <tr class="text-left">
+            <td>Size Sản Phẩm:</td>
+            <td>@Model.Size</td>
+        </tr>
+        <tr class="text-left">
+            <td>Mô Tả:</td>
+            <td style="color:blue;">@Model.MoTa</td>
+        </tr>
+
+        <tr class="text-left">
+            <td>Giá Bán:</td>
+
+            <td style="color:red; font-weight:bold;">@Model.DonGia?.ToString("#,##0.00") VND</td>
+        </tr>
+        <tr class="text-right">
+            <td>
+                @*<a href="@Url.Action("ThemGioHang", "GioHang", new { @mg = Model.MaSanPham, @strURL= Request.Url.ToString()})">
+                    <input type="button" value="Mua " class="btn btn-primary float-left" />
+                </a>*@
+
+                <a href="@Url.Action("DanhMucPartial_TungLoai","DanhMuc")">
+                    <input type="button" value="Mua tiếp" class="btn btn-primary float-right" />
+                </a>
+
+            </td>
+            <td>
+                @*<a href="@Url.Action("GioHang","GioHang")"><input type="submit" class="btn btn-primary rounded" value="QUAY LẠI GIỎ HÀNG" /></a>*@
+
+            </td>
+        </tr>
+
+    </table>
+</div>

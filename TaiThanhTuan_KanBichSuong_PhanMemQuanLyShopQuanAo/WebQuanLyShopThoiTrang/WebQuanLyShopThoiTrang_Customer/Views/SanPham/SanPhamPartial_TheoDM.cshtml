@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "SanPhamPartial_TheoDM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .lsp .anhsp {
+        width: 400px;
+        height: 30rem;
+        border-radius: 20px
+    }
+
+        .lsp .anhsp:hover {
+            /*-webkit-transform: scale(1.3);*/
+            /*-moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);*/
+            margin-top: -10px;
+            transition: 0.5s
+        }
+
+    h4 div ul li a:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    h4 div ul li a:checked {
+        color: red;
+    }
+
+    .pagination .PagedList-skipToPrevious {
+        background-color: white;
+    }
+
+        .pagination .PagedList-skipToPrevious a {
+            color: black;
+        }
+
+    .pagination .PagedList-skipToNext {
+        background-color: white;
+    }
+
+        .pagination .PagedList-skipToNext a {
+            color: black;
+        }
+
+    .pagination li {
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+        background-color: blue;
+        padding: 2px
+    }
+
+        .pagination li a {
+            color: white;
+            width: 100%;
+        }
+    .fa-star {
+        color:yellow
+    }
+</style>
+<br />
+<br />
+@using PagedList.Mvc;
+@model PagedList.IPagedList<WebQuanLyShopThoiTrang_Customer.Models.SanPham>
+
+<br />
+<center>
+    <i class="fa fa-star fa-2x fa-spin my-auto"></i>
+    <i class="fa fa-star fa-2x fa-spin"></i>
+    <font style="font-size: 4rem;text-transform:uppercase;color:red">@ViewBag.TenDM</font>
+    <i class="fa fa-star fa-2x fa-spin"></i>
+    <i class="fa fa-star fa-2x fa-spin"></i>
+</center>
+<br />
+<br />
+<div class="row text-center" style="width:100%">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col text-center">
+                <a class="lsp" href="@Url.Action("XemChiTiet", new { @maSP=item.MaSanPham})"><img class="anhsp" src="@Url.Content("~/Images/"+ViewBag.MaDM+"/"+item.MaLoaiSanPham+"/"+item.TenSanPham+"/"+item._AnhChinh)" alt="@item.TenSanPham" /></a>
+                @*Ten san pham chi hien thi khong qua 30 ky tu  *@
+                @if (item.TenSanPham.Length > 50)
+                {
+                    <p><strong title="@item.TenSanPham">@item.TenSanPham.Substring(0, 30)...</strong></p>
+                    <p>Số lượng: @item.SoLuongTon sản phẩm</p>
+                    if (item.GiaSale != null)
+                    {
+                        <i>Giá sale: <b style="color:green">@item.GiaSale vnđ</b></i><br />
+                        <strike>
+                            Giá cũ: <b style="color:red">@item.DonGia vnđ</b>
+                        </strike>
+                    }
+                    else
+                    {
+                        <b>
+                            Giá : <b style="color:red">@item.DonGia vnđ</b>
+                        </b>
+                    }
+                    @*<a href="@Url.Action("XemChiTiet","SanPham", new { @maSP=item.MaSanPham})" style="color:lightcoral;font-weight:bold">Xem chi tiết</a>*@
+                    <br /><br /><br />
+                }
+                else
+                {
+                    <p><strong title="@item.TenSanPham">@item.TenSanPham</strong></p>
+                    <div class="row">
+                        <i class="col">Số lượng: @item.SoLuongTon sản phẩm</i>
+                    </div>
+                    if (item.GiaSale != null)
+                    {
+                        <i>Giá sale: <b style="color: green">@item.GiaSale vnđ</b></i><br />
+                        <strike>
+                            Giá cũ: <b style="color:red">@item.DonGia vnđ</b>
+                        </strike>
+                    }
+                    else
+                    {
+                        <b>
+                            Giá : <b style="color:red">@item.DonGia vnđ</b>
+                        </b>
+                    }
+                    @*<a href="@Url.Action("XemChiTiet","SanPham", new { @maSP=item.MaSanPham})" style="color:lightcoral;font-weight:bold">Xem chi tiết</a>*@
+                    <br /><br /><br />
+                }
+                <div class="clear"></div>
+            </div>
+        }
+    }
+</div>
+<div class="row text-center">
+    <center class="mx-auto" style="font-size:1.5rem">@Html.PagedListPager(Model, i => Url.Action("SanPhamPartial_TheoDM", "SanPham", new { @maLSP = "", i }))</center>
+</div>

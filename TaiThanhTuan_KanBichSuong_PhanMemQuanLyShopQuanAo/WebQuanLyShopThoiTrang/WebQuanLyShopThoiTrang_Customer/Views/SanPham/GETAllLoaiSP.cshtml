@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "GETAllLoaiSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    i {
+        color: yellow
+    }
+
+    h4 div ul li a:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    h4 div ul li a:checked {
+        color: red;
+    }
+
+    .pagination .PagedList-skipToPrevious {
+        background-color: white;
+    }
+
+        .pagination .PagedList-skipToPrevious a {
+            color: black;
+        }
+
+    .pagination .PagedList-skipToNext {
+        background-color: white;
+    }
+
+        .pagination .PagedList-skipToNext a {
+            color: black;
+        }
+
+    .pagination li {
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+        background-color: blue;
+        padding: 2px
+    }
+
+        .pagination li a {
+            color: white;
+            width: 100%;
+        }
+</style>
+@using PagedList.Mvc;
+@using WebQuanLyShopThoiTrang_Customer.Models
+@model PagedList.IPagedList<WebQuanLyShopThoiTrang_Customer.Models.LoaiSanPham>
+<br />
+<br />
+<h1 style="color:burlywood" class="text-center">DANH MỤC SẢN PHẨM HẤP DẪN MỌI LỨA TUỔI</h1>
+<br />
+<div class="row ml-4">
+    @{
+        for (var i = 0; i < Model.Count; i++)
+        {
+            <div class="col-4 text-center mt-4">
+                <i class="fa fa-star fa-2x fa-spin"></i>
+                <i class="fa fa-star fa-2x fa-spin"></i>
+                <font style="font-size: 2.25em;text-transform:uppercase;">@Model[i].TenLoaiSanPham</font>
+                <i class="fa fa-star fa-2x fa-spin"></i>
+                <i class="fa fa-star fa-2x fa-spin"></i><br />
+                <a style="float:right" class="lsp" href="@Url.Action("SanPhamPartial_TheoDM", "SanPham", new {@maLSP = Model[i].MaLoaiSanPham})"><img type="image" class="d-block img-rounded" style="height:60rem;width:100%" src="~/Images/ProductCaterogy/@Model[i].HinhAnhWeb" alt="@Model[i].TenLoaiSanPham" /></a>
+            </div>
+        }
+    }
+</div>
+<br />
+<div class="row text-center">
+    <h4 style="margin-left:40%; font-size:1.5rem">@Html.PagedListPager(Model, i => Url.Action("GETAllLoaiSP", "DanhMucSP", new { i }))</h4>
+</div>

@@ -1,0 +1,254 @@
+﻿@{
+    ViewBag.Title = "Layout";
+}
+@using WebQuanLyShopThoiTrang_Customer.Controllers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/218edafa57.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="JS/slider.js"></script>
+    <style>
+        [class*='table-hover']:hover {
+            background-color: steelblue;
+        }   
+
+        .all {
+            color: #000;
+            font-size: 15px
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-left: 15px;
+            clear: both;
+        }
+
+            .footer table tr td {
+                padding-right: 50px;
+                padding-left: 25px;
+                color: blue;
+            }
+
+            .footer table p {
+                font-size: 12px;
+            }
+
+            .footer table input {
+                height: 25px;
+            }
+
+        .address {
+            text-align: center;
+            font-size: 12px;
+            color: blue;
+        }
+
+        h3 {
+            font-size: 1.25em;
+        }
+
+        .showBtn:hover {
+            background-color: skyblue;
+        }
+
+        #fixHead {
+            position: fixed;
+            z-index: 999;
+            background: #fff;
+            left: 0;
+            top: 0
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid all">
+        <div class="row">
+            <div class="container-fluid text-center " id="fixHead">
+                <div class="row d-block bg-secondary text-light" style="text-anchor:middle;height:27px;font-size:12px">
+                    <div class="row ">
+                        <div class="col-10 mt-1" style="font-family: Tahoma; font-size: 12px; text-align: center">
+                            <p class="ml-5  my-auto">Hotline Mua Hàng: 0973 285 886 | Hotline CSKH: 1900 886 803 - Ext 1 | Email CSKH: web@360boutique.vn </p>
+                        </div>
+                        <div class="col mt-1">
+                            <a>
+                                @Html.ActionLink("Đăng Ký ", "DangKy", "NguoiDung", new { @style = "color:#fff", @class = "showBtn" }) |
+                            </a>
+                            <a>
+                                @Html.ActionLink("Đăng Nhập ", "DangNhap", "NguoiDung", new { @style = "color:#fff", @class = "showBtn" })
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @*Header*@
+                @*<div class="col-3 float-right" style="margin-top:48px">
+                    @Html.Action("GioHangPartial", "GioHang")
+                </div>*@
+                <div class="row bg-info text-light" style="font-family:Tahoma; text-align:center; height:44px">
+                    <ul class="col-md-5 nav nav-pills my-auto" style="font-size:12px">
+                        <li class="nav-item nav-link text-light table-hover col">
+                            @Html.ActionLink("TRANG CHỦ", "GETAllLoaiSP", "DanhMucSP", new { @class = "all", @style = "color:#fff" })
+                        </li>
+                        <li class="nav-item nav-link text-light table-hover col">
+                            @*@Html.ActionLink("GIÀY NAM", "DanhMucPartial_TungLoai", "DanhMuc", new { @class = "all" })*@
+                            CỬA HÀNG <i class="fas fa-angle-down" style="font-size:13px"></i>
+                        </li>
+                        <li class="nav-item nav-link text-light table-hover col">
+                            @*@Html.ActionLink("GIÀY NỮ", "DanhMucPartial_TungLoai", "DanhMuc", new { @class = "all" })*@
+                            GIỚI THIỆU
+                        </li>
+                        <li class="nav-item nav-link text-light table-hover col">
+                            @*@Html.ActionLink("THÔNG TIN TÀI KHOẢN", "ac", "DanhMuc", new { @class = "all" })*@
+                            TIN TỨC
+                        </li>
+                        <li class="nav-item nav-link text-light table-hover col">
+                            @*@Html.ActionLink("THÔNG TIN TÀI KHOẢN", "ac", "DanhMuc", new { @class = "all" })*@
+                            LIÊN HỆ
+                        </li>
+                    </ul>
+                    <div class="col-3"></div>
+                    <div class="col-md-4 my-auto" style="font-size:12px">
+                        @using (Html.BeginForm("Search", "SanPham", FormMethod.Get))
+                        {
+                            @Html.TextBox("search", "", htmlAttributes: new { @class = "TextBoxTimKiem form-control ", @placeholder = "Nhập từ khóa cần tìm" })
+                            <button class="btn bg-warning float-right" type="submit" style="margin-top: -38px; color: #fff; margin-left: 10px">Tìm kiếm</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center" style="margin-top:5%;">
+            <img src="~/images/logo.PNG" class="my-auto " width="150px" height="150px" alt="360boutique.vn" />
+        </div>
+        <div class="container-fluid text-center">
+            <div class="row " style="background:#fff;left:0;">
+                <div class="row" style="background-color:#fff;position:relative">
+                    <div class="carousel" style="background-color: #fff" id="carouselExampleControls" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="4"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="5"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="6"></li>
+                            <li data-target="#carouselExampleControls" data-slide-to="7"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/images/bg1.jpg" class="d-block" alt="Ảnh 1" style="height:600px; width:1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg2.jpg" class="d-block" alt="Ảnh 2" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg3.jpg" class="d-block" alt="Ảnh 3" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg4.jpg" class="d-block" alt="Ảnh 4" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg5.jpg" class="d-block" alt="Ảnh 5" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg6.jpg" class="d-block" alt="Ảnh 6" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg7.jpg" class="d-block" alt="Ảnh 7" style="height: 600px; width: 1590px" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/images/bg8.jpg" class="d-block" alt="Ảnh 8" style="height: 600px; width: 1590px" />
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </div>
+                    <div class="row" style="width:100%">
+                        <div class="col">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="background-color:antiquewhite">
+            <table>
+                <tr>
+                    <td>
+                        <b>Gọi mua hàng (8h00-21h00)</b><br />
+                        <br />
+                        <i class="fa fa-phone fa-2x" style="color:red;">&nbsp;&nbsp;1800 1866</i>
+                        <p>Tất cả các ngày trong tuần</p>
+                    </td>
+                    <td>
+                        <b>Góp ý-Khiếu nại (8h30-20h30)</b><br />
+                        <br />
+                        <i class="fa fa-phone fa-2x" style="color:red;">&nbsp;&nbsp;1800 1866</i><br />
+                        <p>Tất cả các ngày trong tuần</p>
+                    </td>
+                    <td>
+                        <b>Đăng ký nhận thông tin mới từ 360boutique</b><br />
+                        <br />
+                        <input type="text" placeholder="Nhập emai của bạn tại đây" />
+                        <input type="submit" value="Đăng Ký" />
+                        <br />
+                        <p>Tất cả các ngày trong tuần</p>
+                    </td>
+                    <td>
+                        <b>Like TBG trên mạng xã hội</b><br />
+                        <br />
+                        <a href="#"><i class="fa fa-facebook-square fa-2x" style="color:blue;" title="Facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram fa-2x" style="color:#ee8119;" title="Instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter fa-2x" style="color:blue;" title="Twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-square fa-2x" style="color:red;" title="Youtube"></i></a>
+                        <p></p><br />
+                        <p></p>
+                    </td>
+                </tr>
+            </table>
+            <div class="thongtin row">
+                <div class="hotro col-2 ml-3">
+                    <b>Hỗ Trợ khách hàng</b>
+                    <a href="#"><p>Hướng dẫn thanh toán</p><p>Tra cứu bảo hành</p></a>
+                    <a href="#"><p>Điều khoản sử dụng</p></a>
+                    <a href="#"><p>Câu hỏi thường gặp</p></a>
+                </div>
+                <div class="hotro col-2 ml-3">
+                    <b>Chính sách</b>
+                    <a href="#"><p>Chính sách bảo mật</p></a>
+                    <a href="#"><p>Chính sách đổi trả</p></a>
+                    <a href="#"><p>chính sách giao nhận</p></a>
+                </div>
+            </div>
+            <div class="address">
+                <b>Website Quán lý Shop Thời Trang Quần Áo 360boutique</b><br />
+                <p>
+                    Nhóm SV thực hiện:<br />
+                    Kan Bích Sương<br />
+                    Tải Thanh Tuấn<br />
+                </p>
+            </div>
+        </div>
+        <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acqwldddfrhobpfcetzk");</script>
+
+    </div>
+</body>
+
+</html>
+
