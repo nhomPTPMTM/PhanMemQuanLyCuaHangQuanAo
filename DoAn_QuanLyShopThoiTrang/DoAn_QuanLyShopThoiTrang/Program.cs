@@ -13,8 +13,8 @@ namespace DoAn_QuanLyShopThoiTrang
         /// </summary>
         /// 
         public static FrmLogin frmLogin = null;
-        public static string linkURL_SanPham = "E:\\KBS\\PTPN va UDTM\\DoAn_QuanLyShopThoiTrang\\Image\\";
-        public static string linkURL_LoaiSP = "E:\\KBS\\PTPN va UDTM\\DoAn_QuanLyShopThoiTrang\\Icon\\";
+        public static string linkURL_SanPham = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\";
+        public static string linkURL_LoaiSP = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Icon\\";
         public static string linkURL_KhachHang = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\KhachHang";
         public static string linkURL_Image = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\";
         public static FrmTN frmTN = null;

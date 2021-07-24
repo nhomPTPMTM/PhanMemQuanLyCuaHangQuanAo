@@ -135,6 +135,7 @@ namespace DoAn_QuanLyShopThoiTrang
                 MaDonHangLookUpEdit.Properties.DataSource= hoaDonBLL_DAL.loadDonBanHang(MaKhachHangLookUpEdit.EditValue.ToString()).ToList(); ;
                 MaDonHangLookUpEdit.Properties.ValueMember = "MaDonHang";
                 MaDonHangLookUpEdit.Properties.DisplayMember = "MaDonHang";
+                load_grvChiTietHoaDon();
             }
         }
 

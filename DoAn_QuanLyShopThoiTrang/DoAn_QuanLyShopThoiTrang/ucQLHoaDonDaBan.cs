@@ -95,10 +95,13 @@ namespace DoAn_QuanLyShopThoiTrang
         }
         private void setupDetailGridView()
         {
-            dView.Columns["Size"].Visible = false;
-            dView.Columns["MauSac"].Visible = false;
-            dView.Columns["SanPham"].Visible = false;
-            dView.Columns["HoaDonBanHang"].Visible = false;
+            if (dView != gridView1)
+            {
+                dView.Columns["Size"].Visible = false;
+                dView.Columns["MauSac"].Visible = false;
+                dView.Columns["SanPham"].Visible = false;
+                dView.Columns["HoaDonBanHang"].Visible = false;
+            }
         }
     }
 }

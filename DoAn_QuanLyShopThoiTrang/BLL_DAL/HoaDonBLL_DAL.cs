@@ -205,6 +205,28 @@ namespace BLL_DAL
             }
             
         }
+        public bool XoaHoaDon(string MaHD)
+        {
+            try
+            {
+                List<ChiTietDonBanHang> ctbh = dbContext.ChiTietDonBanHangs.Where(ct => ct.MaDonHang == MaHD).ToList();
+
+                foreach (ChiTietDonBanHang ct in ctbh)
+                {
+                    SanPham sp = dbContext.SanPhams.SingleOrDefault(s => s.MaSanPham == ct.MaSanPham);
+                    sp.SoLuongTon = sp.SoLuongTon + ct.SoLuongMua;
+                    dbContext.ChiTietDonBanHangs.DeleteOnSubmit(ct);
+                }
+                HoaDonBanHang hd = dbContext.HoaDonBanHangs.SingleOrDefault(h => h.MaDonHang == MaHD);
+                dbContext.HoaDonBanHangs.DeleteOnSubmit(hd);
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 
 }

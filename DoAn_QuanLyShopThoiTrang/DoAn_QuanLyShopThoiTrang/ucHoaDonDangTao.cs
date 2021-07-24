@@ -12,6 +12,9 @@ using BLL_DAL;
 using GUI;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraBars.FluentDesignSystem;
+using DevExpress.XtraBars;
 
 namespace DoAn_QuanLyShopThoiTrang
 {
@@ -20,6 +23,7 @@ namespace DoAn_QuanLyShopThoiTrang
         HoaDonBLL_DAL hoaDonBLL_DAL = new HoaDonBLL_DAL();
         KhachHangBLL_DAL khachHangBLL_DAL = new KhachHangBLL_DAL();
         SanPhamBLL sanPhamBLL = new SanPhamBLL();
+        LoaiSanPhamBLL_DAL loai = new LoaiSanPhamBLL_DAL();
         GridView dView = new GridView();
         SetupControls setupControls = new SetupControls();
         ChiTietDonBanHang chiTietDonBan = new ChiTietDonBanHang();
@@ -116,6 +120,36 @@ namespace DoAn_QuanLyShopThoiTrang
             if (hoaDonBLL_DAL.Update_SoLuongMua(chiTietDonBan.MaDonHang, chiTietDonBan.MaSanPham, int.Parse(spinEditSoLuong.Text)))
             {
                 MessageBox.Show("Cập nhật thành công");
+            }
+        }
+
+        private void btnXoaHoaDon_Click(object sender, EventArgs e)
+        {
+            if (hoaDonBLL_DAL.XoaHoaDon(lblMaDH.Text))
+            {
+                MessageBox.Show("Xóa hóa đơn thành công");
+                grv_HoaDon.DataSource = hoaDonBLL_DAL.getBillsCreating();
+            }
+            else {
+                MessageBox.Show("Lỗi trong khi xóa hóa đơn");
+            }
+        }
+
+        private void btnSuaChiTiet_Click(object sender, EventArgs e)
+        {
+            Program.MaHD = lblMaDH.Text;
+            Program.MaKH = cboKhachHang.EditValue.ToString();
+            Program.frmTN.Controls["container"].Controls.Clear();
+            ucThuNgan ucTN = new ucThuNgan(loai.load_DSLoai().ToList()[0].MaLoaiSanPham);
+            Program.frmTN.Controls["container"].Controls.Add(ucTN);
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            if (hoaDonBLL_DAL.ThanhToan(lblMaDH.Text, double.Parse(txtThanhTien.Text), int.Parse(spinEditKhuyenMai.EditValue.ToString())))
+            {
+                MessageBox.Show("Thanh toán thành công");
+                grv_HoaDon.DataSource= grv_HoaDon.DataSource = hoaDonBLL_DAL.getBillsCreating();
             }
         }
     }

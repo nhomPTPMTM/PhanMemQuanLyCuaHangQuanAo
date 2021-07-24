@@ -171,6 +171,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnSuaChiTiet.Size = new System.Drawing.Size(154, 74);
             this.btnSuaChiTiet.TabIndex = 17;
             this.btnSuaChiTiet.Text = "Sửa chi tiết hóa đơn";
+            this.btnSuaChiTiet.Click += new System.EventHandler(this.btnSuaChiTiet_Click);
             // 
             // spinEditKhuyenMai
             // 
@@ -457,6 +458,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnXoaHoaDon.Size = new System.Drawing.Size(139, 74);
             this.btnXoaHoaDon.TabIndex = 5;
             this.btnXoaHoaDon.Text = "Xóa hóa đơn";
+            this.btnXoaHoaDon.Click += new System.EventHandler(this.btnXoaHoaDon_Click);
             // 
             // btnThanhToan
             // 
@@ -470,6 +472,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnThanhToan.Size = new System.Drawing.Size(160, 74);
             this.btnThanhToan.TabIndex = 3;
             this.btnThanhToan.Text = "Xác nhận thanh toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // grv_HoaDon
             // 
