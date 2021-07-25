@@ -30,10 +30,11 @@ namespace DoAn_QuanLyShopThoiTrang
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucThuNgan));
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grvCTHoaDon = new DevExpress.XtraGrid.GridControl();
             this.chiTietDonBanHangsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -46,14 +47,21 @@ namespace DoAn_QuanLyShopThoiTrang
             this.colSoLuongMua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonGiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHoaDonBanHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.sanPhamsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoLuongTon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGiaSale = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMoTa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbQLShopQuanAoDataSet = new DoAn_QuanLyShopThoiTrang.dbQLShopQuanAoDataSet();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -77,46 +85,33 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.toolstripmenu = new System.Windows.Forms.ToolStrip();
+            this.btnTaoMoi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnXoaChiTietHD = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnThanhToanHD = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ThanhTienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.MaDonHangLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.KhuyenMaiSpinEdit = new DevExpress.XtraEditors.SpinEdit();
-            this.btnThemHoaDon = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoaChiTiet = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.MaKhachHangTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForThanhTien = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForKhuyenMai = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.MaKhachHangLookUpEdit = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.lblLoai = new DevExpress.XtraEditors.LabelControl();
             this.khachHangsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colMaSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSoLuongTon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGiaSale = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMoTa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMaLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMaNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoaiSanPham = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCTHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonBanHangsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -137,22 +132,19 @@ namespace DoAn_QuanLyShopThoiTrang
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            this.toolstripmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ThanhTienTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaDonHangLookUpEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhuyenMaiSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangsBindingSource)).BeginInit();
@@ -166,13 +158,12 @@ namespace DoAn_QuanLyShopThoiTrang
             // grvCTHoaDon
             // 
             this.grvCTHoaDon.DataSource = this.chiTietDonBanHangsBindingSource;
-            gridLevelNode1.LevelTemplate = this.gridView3;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.LevelTemplate = this.gridView3;
+            gridLevelNode2.RelationName = "Level1";
             this.grvCTHoaDon.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.grvCTHoaDon.Location = new System.Drawing.Point(12, 12);
             this.grvCTHoaDon.MainView = this.gridView2;
-            this.grvCTHoaDon.MenuManager = this.barManager1;
             this.grvCTHoaDon.Name = "grvCTHoaDon";
             this.grvCTHoaDon.Size = new System.Drawing.Size(492, 236);
             this.grvCTHoaDon.TabIndex = 11;
@@ -250,46 +241,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.colHoaDonBanHang.FieldName = "HoaDonBanHang";
             this.colHoaDonBanHang.Name = "colHoaDonBanHang";
             // 
-            // barManager1
-            // 
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1067, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 898);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1067, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 898);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1067, 0);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 898);
-            // 
             // gridControl1
             // 
             this.tablePanel1.SetColumn(this.gridControl1, 1);
@@ -329,6 +280,76 @@ namespace DoAn_QuanLyShopThoiTrang
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView1_PopupMenuShowing);
+            // 
+            // colMaSanPham
+            // 
+            this.colMaSanPham.FieldName = "MaSanPham";
+            this.colMaSanPham.Name = "colMaSanPham";
+            this.colMaSanPham.Visible = true;
+            this.colMaSanPham.VisibleIndex = 0;
+            // 
+            // colTenSanPham
+            // 
+            this.colTenSanPham.FieldName = "TenSanPham";
+            this.colTenSanPham.Name = "colTenSanPham";
+            this.colTenSanPham.Visible = true;
+            this.colTenSanPham.VisibleIndex = 1;
+            // 
+            // colSoLuongTon
+            // 
+            this.colSoLuongTon.FieldName = "SoLuongTon";
+            this.colSoLuongTon.Name = "colSoLuongTon";
+            this.colSoLuongTon.Visible = true;
+            this.colSoLuongTon.VisibleIndex = 2;
+            // 
+            // colDonGia
+            // 
+            this.colDonGia.FieldName = "DonGia";
+            this.colDonGia.Name = "colDonGia";
+            this.colDonGia.Visible = true;
+            this.colDonGia.VisibleIndex = 3;
+            // 
+            // colGiaSale
+            // 
+            this.colGiaSale.FieldName = "GiaSale";
+            this.colGiaSale.Name = "colGiaSale";
+            // 
+            // colSize
+            // 
+            this.colSize.FieldName = "Size";
+            this.colSize.Name = "colSize";
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.FieldName = "TrangThai";
+            this.colTrangThai.Name = "colTrangThai";
+            // 
+            // colMoTa
+            // 
+            this.colMoTa.FieldName = "MoTa";
+            this.colMoTa.Name = "colMoTa";
+            this.colMoTa.Visible = true;
+            this.colMoTa.VisibleIndex = 4;
+            // 
+            // colMaLoaiSanPham
+            // 
+            this.colMaLoaiSanPham.FieldName = "MaLoaiSanPham";
+            this.colMaLoaiSanPham.Name = "colMaLoaiSanPham";
+            // 
+            // colMaNhaCungCap
+            // 
+            this.colMaNhaCungCap.FieldName = "MaNhaCungCap";
+            this.colMaNhaCungCap.Name = "colMaNhaCungCap";
+            // 
+            // colLoaiSanPham
+            // 
+            this.colLoaiSanPham.FieldName = "LoaiSanPham";
+            this.colLoaiSanPham.Name = "colLoaiSanPham";
+            // 
+            // colNhaCungCap
+            // 
+            this.colNhaCungCap.FieldName = "NhaCungCap";
+            this.colNhaCungCap.Name = "colNhaCungCap";
             // 
             // dbQLShopQuanAoDataSet
             // 
@@ -435,7 +456,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel2.SetColumn(this.memoEditMoTa, 2);
             this.tablePanel2.SetColumnSpan(this.memoEditMoTa, 2);
             this.memoEditMoTa.Location = new System.Drawing.Point(268, 113);
-            this.memoEditMoTa.MenuManager = this.barManager1;
             this.memoEditMoTa.Name = "memoEditMoTa";
             this.memoEditMoTa.Properties.ReadOnly = true;
             this.tablePanel2.SetRow(this.memoEditMoTa, 4);
@@ -510,9 +530,10 @@ namespace DoAn_QuanLyShopThoiTrang
             0,
             0,
             0});
-            this.txtSLMua.Location = new System.Drawing.Point(268, 224);
-            this.txtSLMua.MenuManager = this.barManager1;
+            this.txtSLMua.Location = new System.Drawing.Point(268, 223);
             this.txtSLMua.Name = "txtSLMua";
+            this.txtSLMua.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLMua.Properties.Appearance.Options.UseFont = true;
             this.txtSLMua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSLMua.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
@@ -530,7 +551,7 @@ namespace DoAn_QuanLyShopThoiTrang
             0,
             0});
             this.tablePanel2.SetRow(this.txtSLMua, 5);
-            this.txtSLMua.Size = new System.Drawing.Size(96, 20);
+            this.txtSLMua.Size = new System.Drawing.Size(96, 22);
             this.txtSLMua.TabIndex = 15;
             // 
             // labelControl3
@@ -614,13 +635,11 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.toolstripmenu);
             this.dataLayoutControl1.Controls.Add(this.grvCTHoaDon);
             this.dataLayoutControl1.Controls.Add(this.ThanhTienTextEdit);
             this.dataLayoutControl1.Controls.Add(this.MaDonHangLookUpEdit);
             this.dataLayoutControl1.Controls.Add(this.KhuyenMaiSpinEdit);
-            this.dataLayoutControl1.Controls.Add(this.btnThemHoaDon);
-            this.dataLayoutControl1.Controls.Add(this.btnXoaChiTiet);
-            this.dataLayoutControl1.Controls.Add(this.btnThanhToan);
             this.dataLayoutControl1.Controls.Add(this.MaKhachHangTextEdit);
             this.dataLayoutControl1.DataMember = null;
             this.dataLayoutControl1.DataSource = this.hoaDonBanHangBindingSource;
@@ -633,29 +652,93 @@ namespace DoAn_QuanLyShopThoiTrang
             this.dataLayoutControl1.TabIndex = 1;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
+            // toolstripmenu
+            // 
+            this.toolstripmenu.AutoSize = false;
+            this.toolstripmenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolstripmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTaoMoi,
+            this.toolStripSeparator1,
+            this.btnXoaChiTietHD,
+            this.toolStripSeparator2,
+            this.btnThanhToanHD,
+            this.toolStripSeparator3});
+            this.toolstripmenu.Location = new System.Drawing.Point(520, 201);
+            this.toolstripmenu.Name = "toolstripmenu";
+            this.toolstripmenu.Size = new System.Drawing.Size(469, 35);
+            this.toolstripmenu.TabIndex = 16;
+            this.toolstripmenu.Text = "Tạo mới";
+            // 
+            // btnTaoMoi
+            // 
+            this.btnTaoMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoMoi.Image")));
+            this.btnTaoMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTaoMoi.Name = "btnTaoMoi";
+            this.btnTaoMoi.Size = new System.Drawing.Size(87, 32);
+            this.btnTaoMoi.Text = "Tạo mới";
+            this.btnTaoMoi.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 35);
+            // 
+            // btnXoaChiTietHD
+            // 
+            this.btnXoaChiTietHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaChiTietHD.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaChiTietHD.Image")));
+            this.btnXoaChiTietHD.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnXoaChiTietHD.Name = "btnXoaChiTietHD";
+            this.btnXoaChiTietHD.Size = new System.Drawing.Size(106, 32);
+            this.btnXoaChiTietHD.Text = "Xóa chi tiết";
+            this.btnXoaChiTietHD.Click += new System.EventHandler(this.btnDeleteChiTiet_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 35);
+            // 
+            // btnThanhToanHD
+            // 
+            this.btnThanhToanHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThanhToanHD.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToanHD.Image")));
+            this.btnThanhToanHD.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnThanhToanHD.Name = "btnThanhToanHD";
+            this.btnThanhToanHD.Size = new System.Drawing.Size(108, 32);
+            this.btnThanhToanHD.Text = "Thanh toán";
+            this.btnThanhToanHD.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 35);
+            // 
             // ThanhTienTextEdit
             // 
             this.ThanhTienTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("ReadOnly", this.hoaDonBanHangBindingSource, "ThanhTien", true));
-            this.ThanhTienTextEdit.Location = new System.Drawing.Point(597, 93);
-            this.ThanhTienTextEdit.MenuManager = this.barManager1;
+            this.ThanhTienTextEdit.Location = new System.Drawing.Point(597, 105);
             this.ThanhTienTextEdit.Name = "ThanhTienTextEdit";
             this.ThanhTienTextEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.ThanhTienTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThanhTienTextEdit.Properties.Appearance.Options.UseFont = true;
             this.ThanhTienTextEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.ThanhTienTextEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.ThanhTienTextEdit.Properties.Mask.EditMask = "F";
             this.ThanhTienTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.ThanhTienTextEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.ThanhTienTextEdit.Properties.ReadOnly = true;
-            this.ThanhTienTextEdit.Size = new System.Drawing.Size(392, 20);
+            this.ThanhTienTextEdit.Size = new System.Drawing.Size(392, 26);
             this.ThanhTienTextEdit.StyleController = this.dataLayoutControl1;
             this.ThanhTienTextEdit.TabIndex = 6;
             // 
             // MaDonHangLookUpEdit
             // 
             this.MaDonHangLookUpEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hoaDonBanHangBindingSource, "MaDonHang", true));
-            this.MaDonHangLookUpEdit.Location = new System.Drawing.Point(597, 69);
-            this.MaDonHangLookUpEdit.MenuManager = this.barManager1;
+            this.MaDonHangLookUpEdit.Location = new System.Drawing.Point(597, 75);
             this.MaDonHangLookUpEdit.Name = "MaDonHangLookUpEdit";
+            this.MaDonHangLookUpEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaDonHangLookUpEdit.Properties.Appearance.Options.UseFont = true;
             this.MaDonHangLookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.MaDonHangLookUpEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
@@ -669,7 +752,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.MaDonHangLookUpEdit.Properties.DisplayMember = "MaDonHang";
             this.MaDonHangLookUpEdit.Properties.NullText = "";
             this.MaDonHangLookUpEdit.Properties.ValueMember = "MaDonHang";
-            this.MaDonHangLookUpEdit.Size = new System.Drawing.Size(392, 20);
+            this.MaDonHangLookUpEdit.Size = new System.Drawing.Size(392, 26);
             this.MaDonHangLookUpEdit.StyleController = this.dataLayoutControl1;
             this.MaDonHangLookUpEdit.TabIndex = 8;
             this.MaDonHangLookUpEdit.EditValueChanged += new System.EventHandler(this.MaDonHangTextEdit_EditValueChanged);
@@ -682,10 +765,11 @@ namespace DoAn_QuanLyShopThoiTrang
             0,
             0,
             0});
-            this.KhuyenMaiSpinEdit.Location = new System.Drawing.Point(597, 117);
-            this.KhuyenMaiSpinEdit.MenuManager = this.barManager1;
+            this.KhuyenMaiSpinEdit.Location = new System.Drawing.Point(597, 135);
             this.KhuyenMaiSpinEdit.Name = "KhuyenMaiSpinEdit";
             this.KhuyenMaiSpinEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.KhuyenMaiSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhuyenMaiSpinEdit.Properties.Appearance.Options.UseFont = true;
             this.KhuyenMaiSpinEdit.Properties.Appearance.Options.UseTextOptions = true;
             this.KhuyenMaiSpinEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.KhuyenMaiSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -698,51 +782,22 @@ namespace DoAn_QuanLyShopThoiTrang
             0,
             0,
             0});
-            this.KhuyenMaiSpinEdit.Size = new System.Drawing.Size(392, 20);
+            this.KhuyenMaiSpinEdit.Size = new System.Drawing.Size(392, 26);
             this.KhuyenMaiSpinEdit.StyleController = this.dataLayoutControl1;
             this.KhuyenMaiSpinEdit.TabIndex = 10;
             this.KhuyenMaiSpinEdit.EditValueChanged += new System.EventHandler(this.KhuyenMaiTextEdit_EditValueChanged);
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.Location = new System.Drawing.Point(725, 141);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(102, 22);
-            this.btnThemHoaDon.StyleController = this.dataLayoutControl1;
-            this.btnThemHoaDon.TabIndex = 12;
-            this.btnThemHoaDon.Text = "Tạo mới";
-            this.btnThemHoaDon.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // btnXoaChiTiet
-            // 
-            this.btnXoaChiTiet.Location = new System.Drawing.Point(725, 167);
-            this.btnXoaChiTiet.Name = "btnXoaChiTiet";
-            this.btnXoaChiTiet.Size = new System.Drawing.Size(102, 22);
-            this.btnXoaChiTiet.StyleController = this.dataLayoutControl1;
-            this.btnXoaChiTiet.TabIndex = 13;
-            this.btnXoaChiTiet.Text = "Xóa chi tiết hóa đơn";
-            this.btnXoaChiTiet.Click += new System.EventHandler(this.btnDeleteChiTiet_Click);
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.Location = new System.Drawing.Point(725, 214);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(102, 22);
-            this.btnThanhToan.StyleController = this.dataLayoutControl1;
-            this.btnThanhToan.TabIndex = 14;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // MaKhachHangTextEdit
             // 
             this.MaKhachHangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hoaDonBanHangBindingSource, "MaKhachHang", true));
             this.MaKhachHangTextEdit.Location = new System.Drawing.Point(597, 45);
-            this.MaKhachHangTextEdit.MenuManager = this.barManager1;
             this.MaKhachHangTextEdit.Name = "MaKhachHangTextEdit";
+            this.MaKhachHangTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaKhachHangTextEdit.Properties.Appearance.Options.UseFont = true;
             this.MaKhachHangTextEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.MaKhachHangTextEdit.Properties.NullText = "";
-            this.MaKhachHangTextEdit.Size = new System.Drawing.Size(392, 20);
+            this.MaKhachHangTextEdit.Size = new System.Drawing.Size(392, 26);
             this.MaKhachHangTextEdit.StyleController = this.dataLayoutControl1;
             this.MaKhachHangTextEdit.TabIndex = 15;
             this.MaKhachHangTextEdit.EditValueChanged += new System.EventHandler(this.MaKhachHangComboBoxEdit_EditValueChanged);
@@ -755,17 +810,17 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlItem2});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition1.Width = 496D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition2.Width = 497D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition3.Width = 496D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition4.Width = 497D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2});
-            rowDefinition1.Height = 240D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition3,
+            columnDefinition4});
+            rowDefinition2.Height = 240D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
+            rowDefinition2});
             this.Root.Size = new System.Drawing.Size(1013, 260);
             this.Root.TextVisible = false;
             // 
@@ -774,118 +829,74 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlGroup1.AllowDrawBackground = false;
             this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
             this.ItemForThanhTien,
             this.layoutControlItem1,
             this.ItemForKhuyenMai,
-            this.emptySpaceItem1,
-            this.emptySpaceItem2,
-            this.emptySpaceItem3,
-            this.MaKhachHangLookUpEdit});
+            this.MaKhachHangLookUpEdit,
+            this.layoutControlItem6,
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(496, 0);
             this.layoutControlGroup1.Name = "autoGeneratedGroup0";
             this.layoutControlGroup1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlGroup1.Size = new System.Drawing.Size(497, 240);
             this.layoutControlGroup1.Text = "Thông tin chi tiết hóa đơn";
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnThemHoaDon;
-            this.layoutControlItem3.Location = new System.Drawing.Point(205, 96);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem3.Size = new System.Drawing.Size(106, 26);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnXoaChiTiet;
-            this.layoutControlItem4.Location = new System.Drawing.Point(205, 122);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem4.Size = new System.Drawing.Size(106, 26);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.btnThanhToan;
-            this.layoutControlItem5.Location = new System.Drawing.Point(205, 169);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem5.Size = new System.Drawing.Size(106, 26);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
             // ItemForThanhTien
             // 
             this.ItemForThanhTien.Control = this.ThanhTienTextEdit;
-            this.ItemForThanhTien.Location = new System.Drawing.Point(0, 48);
+            this.ItemForThanhTien.Location = new System.Drawing.Point(0, 60);
             this.ItemForThanhTien.Name = "ItemForThanhTien";
             this.ItemForThanhTien.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.ItemForThanhTien.Size = new System.Drawing.Size(473, 24);
+            this.ItemForThanhTien.Size = new System.Drawing.Size(473, 30);
             this.ItemForThanhTien.Text = "Thanh Tien";
             this.ItemForThanhTien.TextSize = new System.Drawing.Size(74, 13);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.MaDonHangLookUpEdit;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 30);
             this.layoutControlItem1.Name = "ItemForMaDonHang";
             this.layoutControlItem1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem1.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem1.Size = new System.Drawing.Size(473, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(473, 30);
             this.layoutControlItem1.Text = "Ma Don Hang";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(74, 13);
             // 
             // ItemForKhuyenMai
             // 
             this.ItemForKhuyenMai.Control = this.KhuyenMaiSpinEdit;
-            this.ItemForKhuyenMai.Location = new System.Drawing.Point(0, 72);
+            this.ItemForKhuyenMai.Location = new System.Drawing.Point(0, 90);
             this.ItemForKhuyenMai.Name = "ItemForKhuyenMai";
             this.ItemForKhuyenMai.OptionsTableLayoutItem.RowIndex = 1;
-            this.ItemForKhuyenMai.Size = new System.Drawing.Size(473, 24);
+            this.ItemForKhuyenMai.Size = new System.Drawing.Size(473, 30);
             this.ItemForKhuyenMai.Text = "Khuyen Mai";
             this.ItemForKhuyenMai.TextSize = new System.Drawing.Size(74, 13);
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(205, 148);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(106, 21);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(311, 96);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(162, 99);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 96);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(205, 99);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // MaKhachHangLookUpEdit
             // 
             this.MaKhachHangLookUpEdit.Control = this.MaKhachHangTextEdit;
             this.MaKhachHangLookUpEdit.Location = new System.Drawing.Point(0, 0);
             this.MaKhachHangLookUpEdit.Name = "MaKhachHangLookUpEdit";
-            this.MaKhachHangLookUpEdit.Size = new System.Drawing.Size(473, 24);
+            this.MaKhachHangLookUpEdit.Size = new System.Drawing.Size(473, 30);
             this.MaKhachHangLookUpEdit.Text = "Ma Khach Hang";
             this.MaKhachHangLookUpEdit.TextSize = new System.Drawing.Size(74, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.toolstripmenu;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 156);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(473, 39);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(473, 36);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
@@ -903,7 +914,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.pictureEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureEdit2.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.icon_logo;
             this.pictureEdit2.Location = new System.Drawing.Point(29, 3);
-            this.pictureEdit2.MenuManager = this.barManager1;
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Black;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
@@ -930,85 +940,11 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             this.khachHangsBindingSource.DataSource = typeof(BLL_DAL.KhachHang);
             // 
-            // colMaSanPham
-            // 
-            this.colMaSanPham.FieldName = "MaSanPham";
-            this.colMaSanPham.Name = "colMaSanPham";
-            this.colMaSanPham.Visible = true;
-            this.colMaSanPham.VisibleIndex = 0;
-            // 
-            // colTenSanPham
-            // 
-            this.colTenSanPham.FieldName = "TenSanPham";
-            this.colTenSanPham.Name = "colTenSanPham";
-            this.colTenSanPham.Visible = true;
-            this.colTenSanPham.VisibleIndex = 1;
-            // 
-            // colSoLuongTon
-            // 
-            this.colSoLuongTon.FieldName = "SoLuongTon";
-            this.colSoLuongTon.Name = "colSoLuongTon";
-            this.colSoLuongTon.Visible = true;
-            this.colSoLuongTon.VisibleIndex = 2;
-            // 
-            // colDonGia
-            // 
-            this.colDonGia.FieldName = "DonGia";
-            this.colDonGia.Name = "colDonGia";
-            this.colDonGia.Visible = true;
-            this.colDonGia.VisibleIndex = 3;
-            // 
-            // colGiaSale
-            // 
-            this.colGiaSale.FieldName = "GiaSale";
-            this.colGiaSale.Name = "colGiaSale";
-            // 
-            // colSize
-            // 
-            this.colSize.FieldName = "Size";
-            this.colSize.Name = "colSize";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.FieldName = "TrangThai";
-            this.colTrangThai.Name = "colTrangThai";
-            // 
-            // colMoTa
-            // 
-            this.colMoTa.FieldName = "MoTa";
-            this.colMoTa.Name = "colMoTa";
-            this.colMoTa.Visible = true;
-            this.colMoTa.VisibleIndex = 4;
-            // 
-            // colMaLoaiSanPham
-            // 
-            this.colMaLoaiSanPham.FieldName = "MaLoaiSanPham";
-            this.colMaLoaiSanPham.Name = "colMaLoaiSanPham";
-            // 
-            // colMaNhaCungCap
-            // 
-            this.colMaNhaCungCap.FieldName = "MaNhaCungCap";
-            this.colMaNhaCungCap.Name = "colMaNhaCungCap";
-            // 
-            // colLoaiSanPham
-            // 
-            this.colLoaiSanPham.FieldName = "LoaiSanPham";
-            this.colLoaiSanPham.Name = "colLoaiSanPham";
-            // 
-            // colNhaCungCap
-            // 
-            this.colNhaCungCap.FieldName = "NhaCungCap";
-            this.colNhaCungCap.Name = "colNhaCungCap";
-            // 
             // ucThuNgan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Name = "ucThuNgan";
             this.Size = new System.Drawing.Size(1067, 898);
             this.Load += new System.EventHandler(this.ucThuNgan_Load);
@@ -1016,7 +952,6 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.grvCTHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonBanHangsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -1039,27 +974,24 @@ namespace DoAn_QuanLyShopThoiTrang
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            this.toolstripmenu.ResumeLayout(false);
+            this.toolstripmenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ThanhTienTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaDonHangLookUpEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhuyenMaiSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangsBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1082,11 +1014,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private System.Windows.Forms.BindingSource sanPhamBindingSource;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private System.Windows.Forms.BindingSource hoaDonBanHangBindingSource;
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.MemoEdit memoEditMoTa;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SpinEdit txtSLMua;
@@ -1099,14 +1026,8 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraEditors.LookUpEdit MaDonHangLookUpEdit;
         private DevExpress.XtraEditors.SpinEdit KhuyenMaiSpinEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.SimpleButton btnThemHoaDon;
-        private DevExpress.XtraEditors.SimpleButton btnXoaChiTiet;
-        private DevExpress.XtraEditors.SimpleButton btnThanhToan;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem ItemForThanhTien;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem ItemForKhuyenMai;
@@ -1123,9 +1044,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraGrid.Columns.GridColumn colHoaDonBanHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSanPham;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private dbQLShopQuanAoDataSet dbQLShopQuanAoDataSet;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraLayout.LayoutControlItem MaKhachHangLookUpEdit;
@@ -1143,5 +1061,14 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraGrid.Columns.GridColumn colMaNhaCungCap;
         private DevExpress.XtraGrid.Columns.GridColumn colLoaiSanPham;
         private DevExpress.XtraGrid.Columns.GridColumn colNhaCungCap;
+        private System.Windows.Forms.ToolStrip toolstripmenu;
+        private System.Windows.Forms.ToolStripButton btnTaoMoi;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnXoaChiTietHD;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnThanhToanHD;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }
