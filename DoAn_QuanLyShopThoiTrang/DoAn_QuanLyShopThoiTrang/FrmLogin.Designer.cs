@@ -29,7 +29,6 @@ namespace DoAn_QuanLyShopThoiTrang
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -50,7 +49,7 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -63,7 +62,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRowSpan(this.labelControl1, 2);
             this.labelControl1.Size = new System.Drawing.Size(384, 46);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "SIGN IN";
+            this.labelControl1.Text = "Đăng nhập";
             // 
             // labelControl2
             // 
@@ -195,7 +194,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetColumn(this.pictureEdit1, 0);
             this.tablePanel1.SetColumnSpan(this.pictureEdit1, 2);
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.image_login;
             this.pictureEdit1.Location = new System.Drawing.Point(3, 3);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;

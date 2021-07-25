@@ -15,7 +15,6 @@ namespace DoAn_QuanLyShopThoiTrang
     public partial class FrmLogin : DevExpress.XtraEditors.XtraForm
     {
         TaiKhoanNhanVienBLL_DAL tk = new TaiKhoanNhanVienBLL_DAL();
-
         public FrmLogin()
         {
             InitializeComponent();
@@ -68,7 +67,7 @@ namespace DoAn_QuanLyShopThoiTrang
                     DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.Username = null;
                     DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.Password = null;
                 }
-                DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.MaNV = tk.FindTaiKhoan(txtName.Text, txtPassword.Text).MaNhanVien;
+                Program.MaNV = tk.FindTaiKhoan(txtName.Text, txtPassword.Text).MaNhanVien;
                 Properties.Settings.Default.Save();
                 Program.frmTN = new FrmTN();
                 Program.frmTN.Show();

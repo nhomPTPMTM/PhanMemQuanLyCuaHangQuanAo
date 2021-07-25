@@ -26,7 +26,7 @@ namespace GUI
             }
             else
             {
-                pictureBox.Image = Image.FromFile("E:\\KBS\\PTPN va UDTM\\image\\NoImage.jpg");
+                pictureBox.Image = Image.FromFile("E:\\KBS\\PTPN va UDTM\\DoAn_QuanLyShopThoiTrang\\Image\\NoImage.jpg");
                 pictureBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             }
         }

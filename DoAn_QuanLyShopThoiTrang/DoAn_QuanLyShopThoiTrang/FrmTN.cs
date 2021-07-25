@@ -190,7 +190,7 @@ namespace DoAn_QuanLyShopThoiTrang
             ucHome ucHome = new ucHome();
             ucHome.Dock = DockStyle.Fill;
             this.container.Controls.Add(ucHome);
-            List<ChiTietPhanQuyen> lst = nhanVienBLL_DAL.GetDMManHinhs(DoAn_QuanLyShopThoiTrang.Properties.Settings.Default.MaNV);
+            List<ChiTietPhanQuyen> lst = nhanVienBLL_DAL.GetDMManHinhs(Program.MaNV);
             foreach (ChiTietPhanQuyen i in lst)
             {
                 FindMenuPhanQuyen(this.accordionControl1, i.MaManHinh, Convert.ToBoolean(i.CoQuyen));
@@ -275,6 +275,35 @@ namespace DoAn_QuanLyShopThoiTrang
             this.container.Controls.Clear();
             ucHome ucHome = new ucHome();
             this.container.Controls.Add(ucHome);
+        }
+
+        private void accordionControlElementQLKhachHang_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucThemKhachHang ucThemKhachHang = new ucThemKhachHang();
+            ucThemKhachHang.Dock = DockStyle.Fill;
+            this.container.Controls.Add(ucThemKhachHang);
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucThongTinNhanVien uc = new ucThongTinNhanVien();
+            uc.Dock = DockStyle.Fill;
+            this.container.Controls.Add(uc);
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucHoaDonDangTao uc = new ucHoaDonDangTao();
+            this.container.Controls.Add(uc);
         }
     }
 }

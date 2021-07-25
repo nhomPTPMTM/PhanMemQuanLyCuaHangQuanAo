@@ -13,5 +13,22 @@ namespace BLL_DAL
         {
             return dbContext.KhachHangs.Select(kh => kh);
         }
+        public KhachHang getLastKH()
+        {
+            return dbContext.KhachHangs.Select(kh=>kh).ToList().LastOrDefault();
+        }
+        public bool InsertKhachHang(KhachHang kh)
+        {
+            try
+            {
+                dbContext.KhachHangs.InsertOnSubmit(kh);
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
