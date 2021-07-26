@@ -52,6 +52,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementLogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.accordionControlElementTatCaSP = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -105,6 +106,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControl1.Appearance.Group.Hovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControl1.Appearance.Group.Hovered.Options.UseFont = true;
             this.accordionControl1.Appearance.Group.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControl1.Appearance.Group.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.accordionControl1.Appearance.Group.Normal.Options.UseFont = true;
             this.accordionControl1.Appearance.Item.Hovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accordionControl1.Appearance.Item.Hovered.Options.UseFont = true;
@@ -179,6 +181,8 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // accordionControlElementProduct
             // 
+            this.accordionControlElementProduct.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElementTatCaSP});
             this.accordionControlElementProduct.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementProduct.ImageOptions.Image")));
             this.accordionControlElementProduct.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementProduct.Name = "accordionControlElementProduct";
@@ -192,7 +196,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLHoaDon.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement1,
             this.accordionControlElement2});
-            this.accordionControlElementQLHoaDon.Expanded = true;
             this.accordionControlElementQLHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementQLHoaDon.ImageOptions.Image")));
             this.accordionControlElementQLHoaDon.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementQLHoaDon.Name = "accordionControlElementQLHoaDon";
@@ -275,6 +278,16 @@ namespace DoAn_QuanLyShopThoiTrang
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.itemNav);
             // 
+            // accordionControlElementTatCaSP
+            // 
+            this.accordionControlElementTatCaSP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementTatCaSP.ImageOptions.Image")));
+            this.accordionControlElementTatCaSP.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accordionControlElementTatCaSP.Name = "accordionControlElementTatCaSP";
+            this.accordionControlElementTatCaSP.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementTatCaSP.Tag = "All";
+            this.accordionControlElementTatCaSP.Text = "Tất cả sản phẩm";
+            this.accordionControlElementTatCaSP.Click += new System.EventHandler(this.ItemProduct_Click);
+            // 
             // FrmTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +336,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementTatCaSP;
     }
 }

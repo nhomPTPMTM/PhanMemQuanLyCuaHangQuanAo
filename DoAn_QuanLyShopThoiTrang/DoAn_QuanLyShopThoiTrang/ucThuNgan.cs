@@ -36,7 +36,14 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void ucThuNgan_Load(object sender, EventArgs e)
         {
-            lblLoai.Text = loaiSanPham.getTenLoai(maLoai);
+            if (maLoai == "All")
+            {
+                lblLoai.Text = "Tất cả sản phẩm";
+            } else
+            {
+                lblLoai.Text = loaiSanPham.getTenLoai(maLoai);
+            }
+
             gridView1.ShowFindPanel();
             gridView1.OptionsFind.ShowFindButton = true;
             gridView1.FocusedRowChanged += gridView_FocusedRowChanged;
@@ -56,9 +63,14 @@ namespace DoAn_QuanLyShopThoiTrang
         }
         private void load_grvSanPham()
         {
-            gridControl1.DataSource = sanPhamBLL.loadSanPham_ForLoai(maLoai);
-            listSanPham = sanPhamBLL.loadSanPham_ForLoai(maLoai).ToList();
-            maDM = loaiSanPham.load_MaDanhMuc(maLoai);
+            if (maLoai == "All")
+            {
+                gridControl1.DataSource = sanPhamBLL.loadSanPham();
+            }
+            else
+            {
+                gridControl1.DataSource = sanPhamBLL.loadSanPham_ForLoai(maLoai);
+            }
 
             string ID = gridView1.GetFocusedRowCellValue("MaSanPham").ToString();
             selectedSanPham = sanPhamBLL.detailSanpham(ID);
@@ -76,6 +88,8 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void setupPanelProduct(SanPham sanpham)
         {
+
+            maDM = loaiSanPham.load_MaDanhMuc(sanpham.MaLoaiSanPham);
             if (sanpham.DanhMucHinhs.Count > 0)
             {
                 setupControls.setupPicture(pictureEdit1, Program.linkURL_SanPham + maDM + "\\" + sanpham.MaLoaiSanPham + "\\" + sanpham.TenSanPham + "\\" + sanpham.DanhMucHinhs[0].TenHinh);
@@ -89,6 +103,7 @@ namespace DoAn_QuanLyShopThoiTrang
             lblTrangThai.Text= trangthai;
             memoEditMoTa.Text = sanpham.MoTa;
             txtSLMua.Properties.MaxValue =(int) sanpham.SoLuongTon;
+            btnMuaHang.Enabled = (bool)sanpham.TrangThai;
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
@@ -183,6 +198,8 @@ namespace DoAn_QuanLyShopThoiTrang
 
                 Program.MaKH = MaKhachHangTextEdit.EditValue.ToString();
 
+                btnTaoMoi.Enabled = true;
+                btnXoaChiTietHD.Enabled = btnThanhToanHD.Enabled = false;
             }
         }
 
@@ -255,10 +272,14 @@ namespace DoAn_QuanLyShopThoiTrang
         }
         private void load_grvChiTietHoaDon()
         {
+            hoaDonBLL_DAL = new HoaDonBLL_DAL();
             if (MaDonHangLookUpEdit.EditValue != null){ 
-            grvCTHoaDon.DataSource = null;
-            grvCTHoaDon.DataSource = hoaDonBLL_DAL.loadCTDonBanHang(MaDonHangLookUpEdit.EditValue.ToString());
+                grvCTHoaDon.DataSource = null;
+                grvCTHoaDon.DataSource = hoaDonBLL_DAL.loadCTDonBanHang(MaDonHangLookUpEdit.EditValue.ToString());
+                btnThanhToanHD.Enabled = (hoaDonBLL_DAL.loadCTDonBanHang(MaDonHangLookUpEdit.EditValue.ToString()).ToList().Count > 0);
+                btnXoaChiTietHD.Enabled = btnThanhToanHD.Enabled;
             }
+            
         }
 
         private void gridView2_RowUpdated(object sender, RowObjectEventArgs e)

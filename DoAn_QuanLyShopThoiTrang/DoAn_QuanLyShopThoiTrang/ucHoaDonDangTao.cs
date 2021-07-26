@@ -49,22 +49,34 @@ namespace DoAn_QuanLyShopThoiTrang
             {
                 cboKhachHang.Text = gridView1.GetFocusedRowCellValue("KhachHang.TenKhachHang").ToString();
                 lblMaDH.Text = gridView1.GetFocusedRowCellValue("MaDonHang").ToString();
-                txtThanhTien.EditValue= gridView1.GetFocusedRowCellValue("ThanhTien").ToString();
+                txtThanhTien.EditValue = gridView1.GetFocusedRowCellValue("ThanhTien").ToString();
+                btnXacNhanThanhToan.Enabled = (hoaDonBLL_DAL.getSelectedHD(lblMaDH.Text).ChiTietDonBanHangs.Count > 0);
+                btnSuaChiTietHD.Enabled = btnXoaHD.Enabled = true;
             }
+            else {
+                clearData();
+                btnXacNhanThanhToan.Enabled = false;
+                btnSuaChiTietHD.Enabled = btnXoaHD.Enabled = false;
+            }
+            
         }
         private void setupPanelProduct(SanPham sanpham, ChiTietDonBanHang ct)
         {
-            if (sanpham.DanhMucHinhs.Count > 0)
+            if (sanpham != null && ct != null)
             {
-                setupControls.setupPicture(pictureEdit2, Program.linkURL_SanPham + sanpham.LoaiSanPham.MaDanhMuc + "\\" + sanpham.MaLoaiSanPham + "\\" + sanpham.TenSanPham + "\\" + sanpham.DanhMucHinhs[0].TenHinh);
-            }
-            else { setupControls.setupPicture(pictureEdit2, Program.linkURL_SanPham + "NoImage.jpg"); }
+                if (sanpham.DanhMucHinhs.Count > 0)
+                {
+                    setupControls.setupPicture(pictureEdit2, Program.linkURL_SanPham + sanpham.LoaiSanPham.MaDanhMuc + "\\" + sanpham.MaLoaiSanPham + "\\" + sanpham.TenSanPham + "\\" + sanpham.DanhMucHinhs[0].TenHinh);
+                }
+                else { setupControls.setupPicture(pictureEdit2, Program.linkURL_SanPham + "NoImage.jpg"); }
 
-            lblTenSP.Text = sanpham.TenSanPham;
-            lblDonGia.Text = sanpham.DonGia + " VND";
-            spinEditSoLuong.EditValue = ct.SoLuongMua + "";
-            spinEditSoLuong.Properties.MaxValue = decimal.Parse(sanpham.SoLuongTon.ToString());
-            memoEditMoTa.Text = sanpham.MoTa;
+                lblTenSP.Text = sanpham.TenSanPham;
+                lblDonGia.Text = sanpham.DonGia + " VND";
+                spinEditSoLuong.EditValue = ct.SoLuongMua + "";
+                spinEditSoLuong.Properties.MaxValue = int.Parse(sanpham.SoLuongTon.ToString());
+                memoEditMoTa.Text = sanpham.MoTa;
+                btnCapNhatSoLuong.Enabled = true;
+            }
         }
         private void setupDetailGridView()
         {
@@ -117,6 +129,11 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void btnCapNhatSoLuong_Click(object sender, EventArgs e)
         {
+            if (sanPhamBLL.detailSanpham(chiTietDonBan.MaSanPham).SoLuongTon < spinEditSoLuong.Value)
+            {
+                MessageBox.Show("Số lượng mua nhiều hơn số lượng tồn của sản phẩm","Lỗi");
+                return;
+            }
             if (hoaDonBLL_DAL.Update_SoLuongMua(chiTietDonBan.MaDonHang, chiTietDonBan.MaSanPham, int.Parse(spinEditSoLuong.Text)))
             {
                 MessageBox.Show("Cập nhật thành công");
@@ -164,6 +181,17 @@ namespace DoAn_QuanLyShopThoiTrang
                 double thanhTien = (double)hoaDonBLL_DAL.getSelectedHD(lblMaDH.Text).ThanhTien;
                 txtThanhTien.Text = (thanhTien * (100 - (double)spinEditKhuyenMai.Value) / 100) + "";
             }
+        }
+
+        private void spinEditSoLuong_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void clearData()
+        {
+            cboKhachHang.Text = "";
+            lblMaDH.Text = "";
+            txtThanhTien.EditValue = null;
         }
     }
 }

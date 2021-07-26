@@ -30,11 +30,11 @@ namespace DoAn_QuanLyShopThoiTrang
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucThuNgan));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grvCTHoaDon = new DevExpress.XtraGrid.GridControl();
             this.chiTietDonBanHangsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -158,10 +158,10 @@ namespace DoAn_QuanLyShopThoiTrang
             // grvCTHoaDon
             // 
             this.grvCTHoaDon.DataSource = this.chiTietDonBanHangsBindingSource;
-            gridLevelNode2.LevelTemplate = this.gridView3;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.LevelTemplate = this.gridView3;
+            gridLevelNode1.RelationName = "Level1";
             this.grvCTHoaDon.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.grvCTHoaDon.Location = new System.Drawing.Point(12, 12);
             this.grvCTHoaDon.MainView = this.gridView2;
             this.grvCTHoaDon.Name = "grvCTHoaDon";
@@ -671,6 +671,7 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // btnTaoMoi
             // 
+            this.btnTaoMoi.Enabled = false;
             this.btnTaoMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoMoi.Image")));
             this.btnTaoMoi.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -686,6 +687,7 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // btnXoaChiTietHD
             // 
+            this.btnXoaChiTietHD.Enabled = false;
             this.btnXoaChiTietHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaChiTietHD.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaChiTietHD.Image")));
             this.btnXoaChiTietHD.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -701,6 +703,7 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // btnThanhToanHD
             // 
+            this.btnThanhToanHD.Enabled = false;
             this.btnThanhToanHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToanHD.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToanHD.Image")));
             this.btnThanhToanHD.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -810,17 +813,17 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlItem2});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition3.Width = 496D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition4.Width = 497D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1.Width = 496D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition2.Width = 497D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition3,
-            columnDefinition4});
-            rowDefinition2.Height = 240D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1,
+            columnDefinition2});
+            rowDefinition1.Height = 240D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2});
+            rowDefinition1});
             this.Root.Size = new System.Drawing.Size(1013, 260);
             this.Root.TextVisible = false;
             // 

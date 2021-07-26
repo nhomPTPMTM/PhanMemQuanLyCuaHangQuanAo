@@ -125,6 +125,10 @@ namespace BLL_DAL
                     {
                         tmp.ThanhTien = tmp.ThanhTien + (ctDH.DonGiaBan * ctDH.SoLuongMua);
                         spTmp.SoLuongTon = spTmp.SoLuongTon - ctDH.SoLuongMua;
+                        if (spTmp.SoLuongTon == 0)
+                        {
+                            spTmp.TrangThai = false;
+                        }
                         dbContext.SubmitChanges();
                         return true;
                     }
@@ -141,6 +145,10 @@ namespace BLL_DAL
                     {
                         tmp.ThanhTien = tmp.ThanhTien - (deletedChiTiet.DonGiaBan * deletedChiTiet.SoLuongMua);
                         spTmp.SoLuongTon = spTmp.SoLuongTon + deletedChiTiet.SoLuongMua;
+                        if (spTmp.SoLuongTon > 0)
+                        {
+                            spTmp.TrangThai = true;
+                        }
                         dbContext.SubmitChanges();
                         return true;
                     }
@@ -200,6 +208,7 @@ namespace BLL_DAL
                     hd.ThanhTien = hd.ThanhTien - (ctbh.DonGiaBan * (ctbh.SoLuongMua - soLuong));
                     sp.SoLuongTon = sp.SoLuongTon + (ctbh.SoLuongMua - soLuong);
                 }
+                sp.TrangThai = (sp.SoLuongTon > 0);
                 ctbh.SoLuongMua = soLuong;
                 dbContext.SubmitChanges();
                 return true;
