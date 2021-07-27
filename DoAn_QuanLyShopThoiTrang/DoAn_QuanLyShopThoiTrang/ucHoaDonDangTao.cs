@@ -62,8 +62,6 @@ namespace DoAn_QuanLyShopThoiTrang
         }
         private void setupPanelProduct(SanPham sanpham, ChiTietDonBanHang ct)
         {
-            if (sanpham != null && ct != null)
-            {
                 if (sanpham.DanhMucHinhs.Count > 0)
                 {
                     setupControls.setupPicture(pictureEdit2, Program.linkURL_SanPham + sanpham.LoaiSanPham.MaDanhMuc + "\\" + sanpham.MaLoaiSanPham + "\\" + sanpham.TenSanPham + "\\" + sanpham.DanhMucHinhs[0].TenHinh);
@@ -76,7 +74,6 @@ namespace DoAn_QuanLyShopThoiTrang
                 spinEditSoLuong.Properties.MaxValue = int.Parse(sanpham.SoLuongTon.ToString());
                 memoEditMoTa.Text = sanpham.MoTa;
                 btnCapNhatSoLuong.Enabled = true;
-            }
         }
         private void setupDetailGridView()
         {
@@ -93,10 +90,16 @@ namespace DoAn_QuanLyShopThoiTrang
             dView = gridView1.GetDetailView(e.RowHandle, (sender as GridView).GetVisibleDetailRelationIndex(e.RowHandle)) as GridView;
             setupDetailGridView();
             dView.FocusedRowChanged += DView_FocusedRowChanged;
-
-            SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
-            chiTietDonBan = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
-            setupPanelProduct(sp, chiTietDonBan);
+            if (dView == null || dView.GetFocusedRowCellValue("MaSanPham") != null)
+            {
+                SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
+                chiTietDonBan = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
+                setupPanelProduct(sp, chiTietDonBan);
+            }
+            else
+            {
+                clearPanelProduct();
+            }
         }
 
         private void DView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -106,8 +109,12 @@ namespace DoAn_QuanLyShopThoiTrang
             {
                 SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
                 chiTietDonBan = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
-                
+
                 setupPanelProduct(sp, chiTietDonBan);
+            }
+            else
+            {
+                clearPanelProduct();
             }
         }
 
@@ -124,6 +131,9 @@ namespace DoAn_QuanLyShopThoiTrang
                 SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());
                 chiTietDonBan = hoaDonBLL_DAL.GetChiTietDonBanHang(dView.GetFocusedRowCellValue("MaDonHang").ToString(), sp.MaSanPham);
                 setupPanelProduct(sp, chiTietDonBan);
+            }
+            else {
+                clearPanelProduct();
             }
         }
 
@@ -192,6 +202,16 @@ namespace DoAn_QuanLyShopThoiTrang
             cboKhachHang.Text = "";
             lblMaDH.Text = "";
             txtThanhTien.EditValue = null;
+        }
+        private void clearPanelProduct()
+        {
+            pictureEdit2.Image = null;
+            lblTenSP.Text = "";
+            lblDonGia.Text = "";
+            spinEditSoLuong.EditValue = null;
+            spinEditSoLuong.Properties.MaxValue = 0;
+            memoEditMoTa.Text = "";
+            btnCapNhatSoLuong.Enabled = false;
         }
     }
 }

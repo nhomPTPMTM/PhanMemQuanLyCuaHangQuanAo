@@ -311,6 +311,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnCapNhatSoLuong.Appearance.Options.UseFont = true;
             this.tablePanel1.SetColumn(this.btnCapNhatSoLuong, 7);
             this.btnCapNhatSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCapNhatSoLuong.Enabled = false;
             this.btnCapNhatSoLuong.Location = new System.Drawing.Point(573, 620);
             this.btnCapNhatSoLuong.Name = "btnCapNhatSoLuong";
             this.tablePanel1.SetRow(this.btnCapNhatSoLuong, 6);

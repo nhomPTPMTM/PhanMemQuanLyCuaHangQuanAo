@@ -75,13 +75,6 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void gridView_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-            int left = 630, top = 100;
-            string ID = gridView1.GetFocusedRowCellValue("MaSanPham").ToString();
-            if (this.container.Controls.Count == 3) { 
-            this.container.Controls.Remove(this.container.Controls[2]);
-            }
-            PanelControl panelControl = new PanelControl();
-            setupPanelProduct(panelControl, left, top, sanPhamBLL.detailSanpham(ID));
         }
 
         void createSeachControl()
@@ -303,6 +296,15 @@ namespace DoAn_QuanLyShopThoiTrang
             this.itemNav.Caption = $"{ctr.Text}";
             this.container.Controls.Clear();
             ucHoaDonDangTao uc = new ucHoaDonDangTao();
+            this.container.Controls.Add(uc);
+        }
+
+        private void accordionControlElementThongKe_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucThongKe uc = new ucThongKe();
             this.container.Controls.Add(uc);
         }
     }
