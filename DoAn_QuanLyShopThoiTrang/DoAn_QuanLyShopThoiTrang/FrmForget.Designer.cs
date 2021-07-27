@@ -29,7 +29,6 @@ namespace DoAn_QuanLyShopThoiTrang
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmForget));
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.lbPass = new DevExpress.XtraEditors.LabelControl();
             this.linkSignIn = new DevExpress.XtraEditors.HyperlinkLabelControl();
@@ -230,7 +229,7 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -245,14 +244,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRowSpan(this.labelControl1, 2);
             this.labelControl1.Size = new System.Drawing.Size(373, 76);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Find your Password";
+            this.labelControl1.Text = "Tìm mật khẩu của bạn";
             // 
             // pictureEdit1
             // 
             this.tablePanel1.SetColumn(this.pictureEdit1, 0);
             this.tablePanel1.SetColumnSpan(this.pictureEdit1, 4);
             this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.image_forget_password;
             this.pictureEdit1.Location = new System.Drawing.Point(2, 2);
             this.pictureEdit1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureEdit1.Name = "pictureEdit1";

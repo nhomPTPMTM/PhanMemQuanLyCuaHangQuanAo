@@ -34,14 +34,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbQLShopQuanAoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmForget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +85,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetupControls.cs" />
+    <Compile Include="ucHoaDonDangTao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHoaDonDangTao.Designer.cs">
+      <DependentUpon>ucHoaDonDangTao.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +108,18 @@
     </Compile>
     <Compile Include="ucQLSanPham.Designer.cs">
       <DependentUpon>ucQLSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThemKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThemKhachHang.Designer.cs">
+      <DependentUpon>ucThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTinNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTinNhanVien.Designer.cs">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="ucThuNgan.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +153,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucHoaDonDangTao.resx">
+      <DependentUpon>ucHoaDonDangTao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucHome.resx">
       <DependentUpon>ucHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,12 +165,29 @@
     <EmbeddedResource Include="ucQLSanPham.resx">
       <DependentUpon>ucQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucThemKhachHang.resx">
+      <DependentUpon>ucThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTinNhanVien.resx">
+      <DependentUpon>ucThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucThuNgan.resx">
       <DependentUpon>ucThuNgan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dbQLShopQuanAoDataSet.xsc">
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbQLShopQuanAoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbQLShopQuanAoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbQLShopQuanAoDataSet.xss">
+      <DependentUpon>dbQLShopQuanAoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\BLL_DAL.HoaDonBanHang.datasource" />
     <None Include="Properties\DataSources\BLL_DAL.SanPham.datasource" />
     <None Include="Properties\Settings.settings">
@@ -167,6 +214,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\event2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event_360.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_forget_password.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_login.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

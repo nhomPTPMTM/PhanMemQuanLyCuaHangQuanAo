@@ -63,9 +63,49 @@ namespace DoAn_QuanLyShopThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap event_360 {
+            get {
+                object obj = ResourceManager.GetObject("event_360", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap event2 {
             get {
                 object obj = ResourceManager.GetObject("event2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_logo {
+            get {
+                object obj = ResourceManager.GetObject("icon_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_forget_password {
+            get {
+                object obj = ResourceManager.GetObject("image_forget_password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_login {
+            get {
+                object obj = ResourceManager.GetObject("image_login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

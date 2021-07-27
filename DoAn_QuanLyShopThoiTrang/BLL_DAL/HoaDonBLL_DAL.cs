@@ -15,10 +15,13 @@ namespace BLL_DAL
         {
             return dbContext.HoaDonBanHangs.Where(hd => hd.MaKhachHang == maKH && hd.TrangThai == false);
         }
-
         public IQueryable<HoaDonBanHang> getBillsSolded()
         {
             return dbContext.HoaDonBanHangs.Where(hd => hd.TrangThai == true);
+        }
+        public IQueryable<HoaDonBanHang> getBillsCreating()
+        {
+            return dbContext.HoaDonBanHangs.Where(hd => hd.TrangThai == false);
         }
 
         public HoaDonBanHang getSelectedHD(string maHD)
@@ -146,8 +149,9 @@ namespace BLL_DAL
                         return false;
                     }
                 }
+                
             }
-            catch(Exception e)
+            catch
             {
                 return false;
             }
@@ -171,6 +175,59 @@ namespace BLL_DAL
                 }
             }
             catch {
+                return false;
+            }
+        }
+
+        public ChiTietDonBanHang GetChiTietDonBanHang(string MaDH,string MaSP)
+        {
+            return dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
+        }
+        public bool Update_SoLuongMua(string MaDH, string MaSP,int soLuong)
+        {
+            try {
+                ChiTietDonBanHang ctbh= dbContext.ChiTietDonBanHangs.SingleOrDefault(ct => ct.MaDonHang == MaDH && ct.MaSanPham == MaSP);
+                
+                HoaDonBanHang hd= dbContext.HoaDonBanHangs.SingleOrDefault(h=>h.MaDonHang==MaDH);
+                SanPham sp = dbContext.SanPhams.SingleOrDefault(s => s.MaSanPham == ctbh.MaSanPham);
+                if (ctbh.SoLuongMua < soLuong)
+                {
+                    hd.ThanhTien = hd.ThanhTien + (ctbh.DonGiaBan * (soLuong - ctbh.SoLuongMua));
+                    sp.SoLuongTon = sp.SoLuongTon - (soLuong - ctbh.SoLuongMua);
+                }
+                else if (ctbh.SoLuongMua > soLuong)
+                {
+                    hd.ThanhTien = hd.ThanhTien - (ctbh.DonGiaBan * (ctbh.SoLuongMua - soLuong));
+                    sp.SoLuongTon = sp.SoLuongTon + (ctbh.SoLuongMua - soLuong);
+                }
+                ctbh.SoLuongMua = soLuong;
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch {
+                return false;
+            }
+            
+        }
+        public bool XoaHoaDon(string MaHD)
+        {
+            try
+            {
+                List<ChiTietDonBanHang> ctbh = dbContext.ChiTietDonBanHangs.Where(ct => ct.MaDonHang == MaHD).ToList();
+
+                foreach (ChiTietDonBanHang ct in ctbh)
+                {
+                    SanPham sp = dbContext.SanPhams.SingleOrDefault(s => s.MaSanPham == ct.MaSanPham);
+                    sp.SoLuongTon = sp.SoLuongTon + ct.SoLuongMua;
+                    dbContext.ChiTietDonBanHangs.DeleteOnSubmit(ct);
+                }
+                HoaDonBanHang hd = dbContext.HoaDonBanHangs.SingleOrDefault(h => h.MaDonHang == MaHD);
+                dbContext.HoaDonBanHangs.DeleteOnSubmit(hd);
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }
