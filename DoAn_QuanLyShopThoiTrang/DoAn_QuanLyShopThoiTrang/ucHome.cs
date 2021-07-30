@@ -30,7 +30,7 @@ namespace DoAn_QuanLyShopThoiTrang
         {
             try
             {
-                System.Diagnostics.Process.Start("https://yame.vn/xuhuong/read/m-ban-16-04-lb1?lb=fdea1065-cd24-4816-b955-5003b5961bb0");
+                System.Diagnostics.Process.Start("https://360boutique.vn/");
             }
             catch (Exception)
             {

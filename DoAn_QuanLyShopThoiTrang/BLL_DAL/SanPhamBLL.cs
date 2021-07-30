@@ -27,6 +27,7 @@ namespace BLL_DAL
         }
         public bool InsertSanpham(SanPham sp)
         {
+            sp.TrangThai = setTrangThai(sp.SoLuongTon);
             try {
                 SanPham tmp = dbContext.SanPhams.SingleOrDefault(s=>s.MaSanPham==sp.MaSanPham);
                 if (tmp == null)
@@ -49,6 +50,10 @@ namespace BLL_DAL
                 SanPham tmp = dbContext.SanPhams.SingleOrDefault(s => s.MaSanPham == maSP);
                 if (tmp != null)
                 {
+                    if (tmp.DanhMucHinhs.Count > 0)
+                    {
+                        dbContext.DanhMucHinhs.DeleteAllOnSubmit(tmp.DanhMucHinhs);
+                    }
                     dbContext.SanPhams.DeleteOnSubmit(tmp);
                     dbContext.SubmitChanges();
                     return true;
@@ -70,10 +75,12 @@ namespace BLL_DAL
                     tmp.TenSanPham =sp.TenSanPham;
                     tmp.DonGia = sp.DonGia;
                     tmp.SoLuongTon = sp.SoLuongTon;
-                    tmp.TrangThai = sp.TrangThai;
+                    tmp.TrangThai = setTrangThai(tmp.SoLuongTon);
                     tmp.MoTa = sp.MoTa;
                     tmp.Size = sp.Size;
+                    tmp.LoaiSanPham = dbContext.LoaiSanPhams.SingleOrDefault(s => s.MaLoaiSanPham == sp.MaLoaiSanPham);
                     tmp.MaLoaiSanPham = sp.MaLoaiSanPham;
+                    tmp.NhaCungCap = dbContext.NhaCungCaps.SingleOrDefault(s => s.MaNhaCungCap == sp.MaNhaCungCap);
                     tmp.MaNhaCungCap = sp.MaNhaCungCap;
 
                     dbContext.SubmitChanges();
@@ -81,7 +88,57 @@ namespace BLL_DAL
                 }
                 else { return false; }
             }
-            catch
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+                return false;
+            }
+        }
+        public bool ThemHinhAnh(DanhMucHinh hinhAnh)
+        {
+            try
+            {
+                DanhMucHinh image = dbContext.DanhMucHinhs.SingleOrDefault(h => h.MaSanPham == hinhAnh.MaSanPham && h.TenHinh == hinhAnh.TenHinh);
+                if (image == null)
+                {
+                    dbContext.DanhMucHinhs.InsertOnSubmit(hinhAnh);
+                    dbContext.SubmitChanges();
+                    return true;
+                }
+                else { return false; }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+                return false;
+            }
+        }
+        public bool XoaHinhAnh(DanhMucHinh hinhAnh)
+        {
+            try
+            {
+                DanhMucHinh image = dbContext.DanhMucHinhs.SingleOrDefault(h => h.MaSanPham == hinhAnh.MaSanPham && h.TenHinh == hinhAnh.TenHinh);
+                if (image != null)
+                {
+                    dbContext.DanhMucHinhs.DeleteOnSubmit(image);
+                    dbContext.SubmitChanges();
+                    return true;
+                }
+                else { return false; }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+                return false;
+            }
+        }
+        private bool setTrangThai(int? SoLuong)
+        {
+            if (SoLuong > 0)
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }

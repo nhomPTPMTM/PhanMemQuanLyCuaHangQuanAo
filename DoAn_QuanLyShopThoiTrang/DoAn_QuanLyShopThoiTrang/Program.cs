@@ -17,6 +17,7 @@ namespace DoAn_QuanLyShopThoiTrang
         public static string linkURL_LoaiSP = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Icon\\";
         public static string linkURL_KhachHang = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\KhachHang";
         public static string linkURL_Image = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Image\\";
+        public static string linkURL_Icon = "E:\\GitHub\\PhanMemQuanLyCuaHangQuanAo\\DoAn_QuanLyShopThoiTrang\\Icon\\";
         public static FrmTN frmTN = null;
         public static string MaKH="";
         public static string MaHD = "";

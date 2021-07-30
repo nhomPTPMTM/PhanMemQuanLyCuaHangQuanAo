@@ -35,6 +35,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.chiTietDonBanHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.btnExportToExcel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonBanHangsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -78,11 +79,22 @@ namespace DoAn_QuanLyShopThoiTrang
             this.dateEdit1.Properties.Mask.EditMask = "MM/yyyy";
             this.dateEdit1.Size = new System.Drawing.Size(196, 20);
             this.dateEdit1.TabIndex = 1;
+            this.dateEdit1.EditValueChanged += new System.EventHandler(this.dateEdit1_EditValueChanged);
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Location = new System.Drawing.Point(348, 122);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExportToExcel.TabIndex = 2;
+            this.btnExportToExcel.Text = "simpleButton1";
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
             // 
             // ucThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.dateEdit1);
             this.Controls.Add(this.gridControl1);
             this.Name = "ucThongKe";
@@ -103,5 +115,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private System.Windows.Forms.BindingSource chiTietDonBanHangBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnExportToExcel;
     }
 }

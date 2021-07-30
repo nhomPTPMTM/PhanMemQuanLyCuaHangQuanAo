@@ -54,7 +54,7 @@ namespace DoAn_QuanLyShopThoiTrang
         private void DView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             setupDetailGridView();
-            if (dView==null||dView.GetFocusedRowCellValue("MaSanPham") != null)
+            if (dView!=null||dView.GetFocusedRowCellValue("MaSanPham") != null)
             {
                 lblMaDon.Text = dView.GetFocusedRowCellValue("MaSanPham").ToString();
                 SanPham sp = sanPhamBLL.detailSanpham(dView.GetFocusedRowCellValue("MaSanPham").ToString());

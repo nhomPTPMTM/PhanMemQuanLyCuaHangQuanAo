@@ -9,6 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_DAL;
+using System.Diagnostics;
+using DevExpress.XtraExport;
+using DevExpress.XtraSpreadsheet;
+using System.IO;
+using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.Spreadsheet;
+using Table = DevExpress.Spreadsheet.Table;
+
 namespace DoAn_QuanLyShopThoiTrang
 {
     public partial class ucThongKe : DevExpress.XtraEditors.XtraUserControl
@@ -25,6 +33,68 @@ namespace DoAn_QuanLyShopThoiTrang
         private void dashboardViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (dateEdit1.EditValue != null)
+            {
+                gridControl1.DataSource = thongKeBLL_DAL.getThongKe_TheoThang(DateTime.Parse(dateEdit1.EditValue.ToString()));
+            }
+        }
+
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel File(*.xlsx)|*.xlsx";
+            DialogResult dialogResult = saveFileDialog.ShowDialog(this);
+            if (dialogResult == DialogResult.OK)
+            {
+                SpreadsheetControl spreadsheetControl1 = new SpreadsheetControl();
+                IWorkbook workbook = spreadsheetControl1.Document;
+                workbook.LoadDocument("DanhMucKhoa2.xls", DocumentFormat.Xls);
+                DevExpress.Spreadsheet.Worksheet sheet = workbook.Worksheets[0];
+                workbook.BeginUpdate();
+                try
+                {
+                    sheet.Rows.Insert(5, gridView1.RowCount);
+                    ExternalDataSourceOptions options = new ExternalDataSourceOptions() { ImportHeaders = true };
+                    // Bắt đầu ghi từ column thứ 7
+                    Table table = sheet.Tables.Add(gridControl1.DataSource, 5, 0, options);
+                    TableStyleCollection tableStyles = workbook.TableStyles;
+                    TableStyle tableStyle = tableStyles[BuiltInTableStyleId.TableStyleMedium2]; // Đổi style table ở đây
+
+                    // Apply the table style to the existing table.
+                    table.Style = tableStyle;
+
+                    table.Columns[0].Name = "Mã sản phẩm";
+                    table.Columns[1].Name = "Tên sản phểm";
+                    table.Columns[2].Name = "Số lượng bán";
+                    table.Columns[3].Name = "Đơn giá";
+                    table.Columns[4].Name = "Tổng doanh thu";
+                    // sử dụng custom style
+                    //TableStyle customTableStyle = workbook.TableStyles.Add("testTableStyle");
+                    //TableStyleElement totalRowStyle = customTableStyle.TableStyleElements[TableStyleElementType.TotalRow];
+                    //customTableStyle.BeginUpdate();
+                    //totalRowStyle.Fill.BackgroundColor = Color.Green;
+                    //totalRowStyle.Font.Color = Color.White;
+                    //totalRowStyle.Font.Bold = true;
+                    //customTableStyle.EndUpdate();
+
+                    //table.Style = customTableStyle;
+
+                    // sheet.MergeCells(sheet.Range["B2764:G2764"]);
+
+                }
+                finally
+                {
+                    workbook.EndUpdate();
+                }
+
+                spreadsheetControl1.SaveDocument("testThongKe.xlsx", DocumentFormat.Xlsx);
+                Process.Start("testThongKe.xlsx");
+            }
         }
     }
 }

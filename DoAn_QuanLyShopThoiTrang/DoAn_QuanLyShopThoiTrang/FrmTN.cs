@@ -234,6 +234,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.itemNav.Caption = $"{ctr.Text}";
             this.container.Controls.Clear();
             ucQLSanPham qLSanPham = new ucQLSanPham();
+            qLSanPham.Dock = DockStyle.Fill;
             this.container.Controls.Add(qLSanPham);
         }
 
@@ -305,6 +306,15 @@ namespace DoAn_QuanLyShopThoiTrang
             this.itemNav.Caption = $"{ctr.Text}";
             this.container.Controls.Clear();
             ucThongKe uc = new ucThongKe();
+            this.container.Controls.Add(uc);
+        }
+
+        private void accordionControlElementQLNhapHang_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucDonNhapHang uc = new ucDonNhapHang();
             this.container.Controls.Add(uc);
         }
     }

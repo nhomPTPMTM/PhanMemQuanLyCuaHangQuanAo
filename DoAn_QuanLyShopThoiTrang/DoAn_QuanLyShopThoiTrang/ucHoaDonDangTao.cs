@@ -171,7 +171,7 @@ namespace DoAn_QuanLyShopThoiTrang
             Program.MaHD = lblMaDH.Text;
             Program.MaKH = cboKhachHang.EditValue.ToString();
             Program.frmTN.Controls["container"].Controls.Clear();
-            ucThuNgan ucTN = new ucThuNgan(loai.load_DSLoai().ToList()[0].MaLoaiSanPham);
+            ucThuNgan ucTN = new ucThuNgan("All");
             Program.frmTN.Controls["container"].Controls.Add(ucTN);
         }
 

@@ -47,9 +47,8 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementThongKe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElementSanPham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementQLSanPham = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElementQLNhapHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementLogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
@@ -63,9 +62,9 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             this.container.Controls.Add(this.ucHome1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(260, 31);
+            this.container.Location = new System.Drawing.Point(285, 31);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1124, 514);
+            this.container.Size = new System.Drawing.Size(1099, 514);
             this.container.TabIndex = 0;
             // 
             // ucHome1
@@ -73,7 +72,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.ucHome1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHome1.Location = new System.Drawing.Point(0, 0);
             this.ucHome1.Name = "ucHome1";
-            this.ucHome1.Size = new System.Drawing.Size(1124, 514);
+            this.ucHome1.Size = new System.Drawing.Size(1099, 514);
             this.ucHome1.TabIndex = 0;
             // 
             // fluentFormDefaultManager1
@@ -110,14 +109,15 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLNhanVien,
             this.accordionControlElementProduct,
             this.accordionControlElementQLHoaDon,
-            this.accordionControlElementSanPham,
+            this.accordionControlElementQLSanPham,
+            this.accordionControlElementQLNhapHang,
             this.accordionControlElement3,
             this.accordionControlElementLogOut});
             this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
             this.accordionControl1.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Always;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 514);
+            this.accordionControl1.Size = new System.Drawing.Size(285, 514);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -202,7 +202,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement1,
             this.accordionControlElement2,
             this.accordionControlElementThongKe});
-            this.accordionControlElementQLHoaDon.Expanded = true;
             this.accordionControlElementQLHoaDon.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementQLHoaDon.ImageOptions.Image")));
             this.accordionControlElementQLHoaDon.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
             this.accordionControlElementQLHoaDon.Name = "accordionControlElementQLHoaDon";
@@ -237,32 +236,31 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementThongKe.Text = "Thống kê";
             this.accordionControlElementThongKe.Click += new System.EventHandler(this.accordionControlElementThongKe_Click);
             // 
-            // accordionControlElementSanPham
+            // accordionControlElementQLSanPham
             // 
-            this.accordionControlElementSanPham.Appearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.accordionControlElementSanPham.Appearance.Normal.Options.UseForeColor = true;
-            this.accordionControlElementSanPham.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement7,
-            this.accordionControlElement8});
-            this.accordionControlElementSanPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementSanPham.ImageOptions.Image")));
-            this.accordionControlElementSanPham.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Squeeze;
-            this.accordionControlElementSanPham.Name = "accordionControlElementSanPham";
-            this.accordionControlElementSanPham.Tag = "MH003";
-            this.accordionControlElementSanPham.Text = "Quản lý kho hàng";
-            this.accordionControlElementSanPham.Visible = false;
+            this.accordionControlElementQLSanPham.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElementQLSanPham.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElementQLSanPham.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementQLSanPham.ImageOptions.Image")));
+            this.accordionControlElementQLSanPham.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accordionControlElementQLSanPham.Name = "accordionControlElementQLSanPham";
+            this.accordionControlElementQLSanPham.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementQLSanPham.Tag = "MH003";
+            this.accordionControlElementQLSanPham.Text = "Quản lý sản phẩm";
+            this.accordionControlElementQLSanPham.Visible = false;
+            this.accordionControlElementQLSanPham.Click += new System.EventHandler(this.accordionControlElement7_Click);
             // 
-            // accordionControlElement7
+            // accordionControlElementQLNhapHang
             // 
-            this.accordionControlElement7.Name = "accordionControlElement7";
-            this.accordionControlElement7.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement7.Text = "Quản lý sản phẩm";
-            this.accordionControlElement7.Click += new System.EventHandler(this.accordionControlElement7_Click);
-            // 
-            // accordionControlElement8
-            // 
-            this.accordionControlElement8.Name = "accordionControlElement8";
-            this.accordionControlElement8.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement8.Text = "Quản lý danh mục hình";
+            this.accordionControlElementQLNhapHang.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElementQLNhapHang.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElementQLNhapHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElementQLNhapHang.ImageOptions.Image")));
+            this.accordionControlElementQLNhapHang.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
+            this.accordionControlElementQLNhapHang.Name = "accordionControlElementQLNhapHang";
+            this.accordionControlElementQLNhapHang.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementQLNhapHang.Tag = "MH005";
+            this.accordionControlElementQLNhapHang.Text = "Quản lý đơn nhập hành";
+            this.accordionControlElementQLNhapHang.Visible = false;
+            this.accordionControlElementQLNhapHang.Click += new System.EventHandler(this.accordionControlElementQLNhapHang_Click);
             // 
             // accordionControlElement3
             // 
@@ -334,9 +332,8 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement10;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementQLHoaDon;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementSanPham;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementQLSanPham;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementQLNhapHang;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;

@@ -34,5 +34,22 @@ namespace BLL_DAL
             lst = query.ToList();
             return lst;
         }
+        public List<ThongKe> getThongKe_TheoThang(DateTime thang)
+        {
+            List<ThongKe> lst = new List<ThongKe>();
+            lst = dbContext.SanPhams
+                .Join(dbContext.ChiTietDonBanHangs, sp => sp.MaSanPham, ct => ct.MaSanPham, (sp, ct) => new { sp, ct })
+                .ToList()
+                .Where(a => DateTime.Parse(a.ct.HoaDonBanHang.NgayTao.ToString()).ToString("MM/yyyy") == thang.ToString("MM/yyyy"))
+                .GroupBy(a=>new { a.sp.MaSanPham,a.sp.TenSanPham,a.sp.DonGia})
+                .Select(u=>new ThongKe(
+                    u.Key.MaSanPham,
+                    u.Key.TenSanPham,
+                    u.Sum(s=>s.ct.SoLuongMua),
+                    u.Key.DonGia
+                    ))
+                .ToList();
+            return lst;
+        }
     }
 }
