@@ -37,7 +37,7 @@ def load_dataset():
 def Preprocess_the_data(train_images,test_images,train_labels,test_labels):
         plt.figure(figsize=(10,10))
         train_images = train_images.astype('float32')
-        train_images = train_images.astype('float32')
+        test_images = train_images.astype('float32')
         train_images = train_images / 255.0
         test_images = test_images / 255.0
         # Change the labels from categorical to one-hot encoding
@@ -81,7 +81,8 @@ def create_model_2():
         fashion_model.add(MaxPooling2D(pool_size=(2, 2),padding='same'))
         fashion_model.add(Flatten())
         fashion_model.add(Dense(128, activation='linear'))
-        fashion_model.add(LeakyReLU(alpha=0.1))                  
+        fashion_model.add(LeakyReLU(alpha=0.1))
+        fashion_model.add(Dropout(0.3))
         fashion_model.add(Dense(num_classes, activation='softmax'))
 
         fashion_model.compile(loss=keras.losses.categorical_crossentropy, optimizer=keras.optimizers.Adam(),metrics=['accuracy'])
@@ -95,20 +96,54 @@ def load_model():
 # run the test harness for evaluating a model
 def run_test_harness():
         # load dataset
-	trainX, trainY, testX, testY = load_dataset()
-	# prepare pixel data
-	trainX, testX,trainY,testY= Preprocess_the_data(trainX, testX,trainY,testY)
-	# create model
-	model = create_model_2()
-	model.summary()
-	#fit model
-	#model.fit(trainX, trainY, epochs=10, batch_size=32, verbose=0)
-	model = model.fit(trainX, trainY, batch_size=batch_size,epochs=epochs,verbose=2,validation_data=(testX, testY))
-	#Evaluate accuracy
-	#test_loss, test_acc = model.evaluate(testX,  testY, verbose=2)
-	#print('\nTest accuracy:', test_acc)
-	# save model
-	#model.save('my_model.h5')
-	
-# entry point, run the test harness
-run_test_harness()
+        trainX, trainY, testX, testY = load_dataset()
+        # prepare pixel data
+        trainX, testX,trainY,testY= Preprocess_the_data(trainX, testX,trainY,testY)
+        # create model
+        model = create_model_2()
+        model.summary()
+        #fit model
+        #model.fit(trainX, trainY, epochs=10, batch_size=32, verbose=0)
+        model_train_dropout = model.fit(trainX, trainY, batch_size=batch_size,epochs=epochs,verbose=2,validation_data=(testX, testY))
+        # save model
+        model.save('my_model.h5')
+        
+def run_evalute():
+        # load dataset
+        trainX, trainY, testX, testY = load_dataset()
+        # prepare pixel data
+        trainX, testX,trainY,testY= Preprocess_the_data(trainX, testX,trainY,testY)
+        # load model
+        fashion_model = keras.models.load_model('my_model.h5')
+        #Evaluate accuracy
+        test_eval = fashion_model.evaluate(testX, testY, verbose=2)
+        print('Test loss:', test_eval[0])
+        print('Test accuracy:', test_eval[1])
+
+def run_prediction():
+        # load dataset
+        trainX, trainY, testX, testY = load_dataset()
+        # prepare pixel data
+        trainX, testX,trainY,testY= Preprocess_the_data(trainX, testX,trainY,testY)
+        # load model
+        fashion_model = keras.models.load_model('my_model.h5')
+        #preditions
+        predicted_classes = fashion_model.predict(testX)
+        predicted_classes = np.argmax(np.round(predicted_classes),axis=1)
+        
+        print(predicted_classes.shape, testY.shape)
+        correct = np.where(predicted_classes==testY)[0]
+        print ("Found %d correct labels" % len(correct))
+
+        for i, correct in enumerate(correct[:9]):
+                plt.subplot(3,3,i+1)
+                plt.imshow(test_X[correct].reshape(28,28), cmap='gray', interpolation='none')
+                plt.title("Predicted {}, Class {}".format(class_names[predicted_classes[correct]], class_names[testY[correct]]))
+                plt.tight_layout()
+        plt.show()
+        
+#entry point, run the test harness
+#run_test_harness()
+#run_evalute()
+run_prediction()
+
