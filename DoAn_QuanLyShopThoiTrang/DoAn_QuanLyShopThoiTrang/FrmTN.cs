@@ -306,6 +306,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.itemNav.Caption = $"{ctr.Text}";
             this.container.Controls.Clear();
             ucThongKe uc = new ucThongKe();
+            uc.Dock = DockStyle.Fill;
             this.container.Controls.Add(uc);
         }
 

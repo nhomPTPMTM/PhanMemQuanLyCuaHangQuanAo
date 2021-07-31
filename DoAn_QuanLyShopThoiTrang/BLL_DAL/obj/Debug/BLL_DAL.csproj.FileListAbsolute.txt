@@ -11,4 +11,3 @@ E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\BLL_DAL\bin\Debug\
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\BLL_DAL\obj\Debug\BLL_DAL.dll
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\BLL_DAL\obj\Debug\BLL_DAL.pdb
-E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\BLL_DAL\obj\Debug\BLL_DAL.csprojAssemblyReference.cache

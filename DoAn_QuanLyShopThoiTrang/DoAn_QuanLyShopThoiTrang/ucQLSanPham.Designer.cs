@@ -90,6 +90,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnXoaHinhAnh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAction = new System.Windows.Forms.ToolStripButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamsBindingSource)).BeginInit();
@@ -144,11 +145,11 @@ namespace DoAn_QuanLyShopThoiTrang
             gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(38, 140);
+            this.gridControl1.Location = new System.Drawing.Point(38, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.tablePanel1.SetRow(this.gridControl1, 1);
-            this.gridControl1.Size = new System.Drawing.Size(677, 235);
+            this.tablePanel1.SetRow(this.gridControl1, 2);
+            this.gridControl1.Size = new System.Drawing.Size(677, 234);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -586,9 +587,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetColumn(this.groupControlTT_SanPham, 1);
             this.groupControlTT_SanPham.Controls.Add(this.dataLayoutControl1);
             this.groupControlTT_SanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControlTT_SanPham.Location = new System.Drawing.Point(38, 421);
+            this.groupControlTT_SanPham.Location = new System.Drawing.Point(38, 413);
             this.groupControlTT_SanPham.Name = "groupControlTT_SanPham";
-            this.tablePanel1.SetRow(this.groupControlTT_SanPham, 3);
+            this.tablePanel1.SetRow(this.groupControlTT_SanPham, 4);
             this.groupControlTT_SanPham.Size = new System.Drawing.Size(677, 278);
             this.groupControlTT_SanPham.TabIndex = 6;
             this.groupControlTT_SanPham.Text = "Thông tin sản phẩm";
@@ -599,6 +600,7 @@ namespace DoAn_QuanLyShopThoiTrang
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 98.95F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 6.05F)});
+            this.tablePanel1.Controls.Add(this.labelControl6);
             this.tablePanel1.Controls.Add(this.pictureEdit2);
             this.tablePanel1.Controls.Add(this.toolStrip1);
             this.tablePanel1.Controls.Add(this.gridControl1);
@@ -607,12 +609,13 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 137F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 241F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 40F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 240F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 30F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 284F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(759, 758);
+            this.tablePanel1.Size = new System.Drawing.Size(759, 705);
             this.tablePanel1.TabIndex = 7;
             // 
             // pictureEdit2
@@ -627,7 +630,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.tablePanel1.SetRow(this.pictureEdit2, 0);
-            this.pictureEdit2.Size = new System.Drawing.Size(677, 131);
+            this.pictureEdit2.Size = new System.Drawing.Size(677, 94);
             this.pictureEdit2.TabIndex = 8;
             // 
             // toolStrip1
@@ -648,10 +651,10 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnXoaHinhAnh,
             this.toolStripSeparator5,
             this.btnAction});
-            this.toolStrip1.Location = new System.Drawing.Point(35, 378);
+            this.toolStrip1.Location = new System.Drawing.Point(35, 380);
             this.toolStrip1.Name = "toolStrip1";
-            this.tablePanel1.SetRow(this.toolStrip1, 2);
-            this.toolStrip1.Size = new System.Drawing.Size(683, 40);
+            this.tablePanel1.SetRow(this.toolStrip1, 3);
+            this.toolStrip1.Size = new System.Drawing.Size(683, 30);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -661,14 +664,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(69, 37);
+            this.btnThem.Size = new System.Drawing.Size(69, 27);
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 30);
             // 
             // btnXoa
             // 
@@ -677,14 +680,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(56, 37);
+            this.btnXoa.Size = new System.Drawing.Size(56, 27);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 30);
             // 
             // btnSua
             // 
@@ -693,14 +696,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(56, 37);
+            this.btnSua.Size = new System.Drawing.Size(56, 27);
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 30);
             // 
             // btnThemHinhAnh
             // 
@@ -708,14 +711,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnThemHinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnThemHinhAnh.Image")));
             this.btnThemHinhAnh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnThemHinhAnh.Name = "btnThemHinhAnh";
-            this.btnThemHinhAnh.Size = new System.Drawing.Size(134, 37);
+            this.btnThemHinhAnh.Size = new System.Drawing.Size(134, 27);
             this.btnThemHinhAnh.Text = "Thêm hình ảnh";
             this.btnThemHinhAnh.Click += new System.EventHandler(this.btnThemHinhAnh_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 30);
             // 
             // btnXoaHinhAnh
             // 
@@ -723,23 +726,38 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnXoaHinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHinhAnh.Image")));
             this.btnXoaHinhAnh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnXoaHinhAnh.Name = "btnXoaHinhAnh";
-            this.btnXoaHinhAnh.Size = new System.Drawing.Size(121, 37);
+            this.btnXoaHinhAnh.Size = new System.Drawing.Size(121, 27);
             this.btnXoaHinhAnh.Text = "Xóa hình ảnh";
             this.btnXoaHinhAnh.Click += new System.EventHandler(this.btnXoaHinhAnh_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 30);
             // 
             // btnAction
             // 
             this.btnAction.Image = ((System.Drawing.Image)(resources.GetObject("btnAction.Image")));
             this.btnAction.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAction.Name = "btnAction";
-            this.btnAction.Size = new System.Drawing.Size(99, 37);
+            this.btnAction.Size = new System.Drawing.Size(99, 27);
             this.btnAction.Text = "Chỉnh sửa";
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tablePanel1.SetColumn(this.labelControl6, 1);
+            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl6.Location = new System.Drawing.Point(38, 103);
+            this.labelControl6.Name = "labelControl6";
+            this.tablePanel1.SetRow(this.labelControl6, 1);
+            this.labelControl6.Size = new System.Drawing.Size(677, 34);
+            this.labelControl6.TabIndex = 10;
+            this.labelControl6.Text = "QUẢN LÝ SẢN PHẨM";
             // 
             // ucQLSanPham
             // 
@@ -747,7 +765,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tablePanel1);
             this.Name = "ucQLSanPham";
-            this.Size = new System.Drawing.Size(759, 758);
+            this.Size = new System.Drawing.Size(759, 705);
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamsBindingSource)).EndInit();
@@ -852,5 +870,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraEditors.GroupControl groupControlTT_SanPham;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnAction;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

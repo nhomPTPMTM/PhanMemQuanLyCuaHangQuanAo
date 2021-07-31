@@ -11,7 +11,7 @@ namespace BLL_DAL
         public List<ThongKe> getThongKe()
         {
             List<ThongKe> lst = new List<ThongKe>();
-            var sumSoLuong = dbContext.ChiTietDonBanHangs.GroupBy(ct => ct.MaSanPham).Select(ct => ct).Select(a => new {
+            var sumSoLuong = dbContext.ChiTietDonBanHangs.Where(ct=>ct.HoaDonBanHang.TrangThai==true).GroupBy(ct => ct.MaSanPham).Select(ct => ct).Select(a => new {
                         Name =a.Key,
                         Amount=a.Sum(s => s.SoLuongMua)
             });
@@ -40,7 +40,7 @@ namespace BLL_DAL
             lst = dbContext.SanPhams
                 .Join(dbContext.ChiTietDonBanHangs, sp => sp.MaSanPham, ct => ct.MaSanPham, (sp, ct) => new { sp, ct })
                 .ToList()
-                .Where(a => DateTime.Parse(a.ct.HoaDonBanHang.NgayTao.ToString()).ToString("MM/yyyy") == thang.ToString("MM/yyyy"))
+                .Where(a => DateTime.Parse(a.ct.HoaDonBanHang.NgayTao.ToString()).ToString("MM/yyyy") == thang.ToString("MM/yyyy")&&a.ct.HoaDonBanHang.TrangThai==true)
                 .GroupBy(a=>new { a.sp.MaSanPham,a.sp.TenSanPham,a.sp.DonGia})
                 .Select(u=>new ThongKe(
                     u.Key.MaSanPham,

@@ -22,6 +22,7 @@ namespace DoAn_QuanLyShopThoiTrang
     public partial class ucThongKe : DevExpress.XtraEditors.XtraUserControl
     {
         ThongKeBLL_DAL thongKeBLL_DAL = new ThongKeBLL_DAL();
+        DevExpress.Spreadsheet.Worksheet sheet;
         public ucThongKe()
         {
             InitializeComponent();
@@ -53,15 +54,16 @@ namespace DoAn_QuanLyShopThoiTrang
             {
                 SpreadsheetControl spreadsheetControl1 = new SpreadsheetControl();
                 IWorkbook workbook = spreadsheetControl1.Document;
-                workbook.LoadDocument("DanhMucKhoa2.xls", DocumentFormat.Xls);
-                DevExpress.Spreadsheet.Worksheet sheet = workbook.Worksheets[0];
+                workbook.LoadDocument("templateThongKe.xlsx", DocumentFormat.Xlsx);
+                sheet = workbook.Worksheets[0];
                 workbook.BeginUpdate();
                 try
                 {
                     sheet.Rows.Insert(5, gridView1.RowCount);
+                    
                     ExternalDataSourceOptions options = new ExternalDataSourceOptions() { ImportHeaders = true };
                     // Bắt đầu ghi từ column thứ 7
-                    Table table = sheet.Tables.Add(gridControl1.DataSource, 5, 0, options);
+                    Table table = sheet.Tables.Add(gridControl1.DataSource, 6, 0, options);
                     TableStyleCollection tableStyles = workbook.TableStyles;
                     TableStyle tableStyle = tableStyles[BuiltInTableStyleId.TableStyleMedium2]; // Đổi style table ở đây
 
@@ -92,8 +94,21 @@ namespace DoAn_QuanLyShopThoiTrang
                     workbook.EndUpdate();
                 }
 
-                spreadsheetControl1.SaveDocument("testThongKe.xlsx", DocumentFormat.Xlsx);
-                Process.Start("testThongKe.xlsx");
+                spreadsheetControl1.SaveDocument(saveFileDialog.FileName, DocumentFormat.Xlsx);
+                Process.Start(saveFileDialog.FileName);
+            }
+        }
+        private void setNgayLap()
+        {
+            sheet.Cells["D2"].Value = "Ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
+            if (dateEdit1.Text == null)
+            {
+                sheet.Cells["A5"].Value = "Tháng " + DateTime.Parse(dateEdit1.EditValue.ToString()).ToString("MM/yyyy");
+            }
+            else
+            {
+                sheet.Cells["A5"].Value = "Tháng " + DateTime.Now.ToString("MM/yyyy");
+                sheet.Cells["D8"].Value = "Ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
             }
         }
     }
