@@ -38,8 +38,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.btnExportToExcel = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.ThongKebindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chiTietDonBanHangsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -49,6 +50,7 @@ namespace DoAn_QuanLyShopThoiTrang
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThongKebindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chiTietDonBanHangsBindingSource
@@ -148,22 +150,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.Size = new System.Drawing.Size(847, 635);
             this.tablePanel1.TabIndex = 4;
             // 
-            // pictureEdit1
-            // 
-            this.tablePanel1.SetColumn(this.pictureEdit1, 1);
-            this.tablePanel1.SetColumnSpan(this.pictureEdit1, 5);
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureEdit1.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.icon_logo;
-            this.pictureEdit1.Location = new System.Drawing.Point(25, 3);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Black;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.tablePanel1.SetRow(this.pictureEdit1, 0);
-            this.pictureEdit1.Size = new System.Drawing.Size(808, 134);
-            this.pictureEdit1.TabIndex = 4;
-            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +165,22 @@ namespace DoAn_QuanLyShopThoiTrang
             this.labelControl2.Size = new System.Drawing.Size(808, 39);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Thống kê";
+            // 
+            // pictureEdit1
+            // 
+            this.tablePanel1.SetColumn(this.pictureEdit1, 1);
+            this.tablePanel1.SetColumnSpan(this.pictureEdit1, 5);
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.EditValue = global::DoAn_QuanLyShopThoiTrang.Properties.Resources.icon_logo;
+            this.pictureEdit1.Location = new System.Drawing.Point(25, 3);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Black;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.tablePanel1.SetRow(this.pictureEdit1, 0);
+            this.pictureEdit1.Size = new System.Drawing.Size(808, 134);
+            this.pictureEdit1.TabIndex = 4;
             // 
             // ucThongKe
             // 
@@ -197,6 +199,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ThongKebindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,5 +215,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.BindingSource ThongKebindingSource;
     }
 }

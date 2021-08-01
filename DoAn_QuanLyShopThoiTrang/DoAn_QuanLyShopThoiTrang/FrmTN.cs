@@ -318,5 +318,14 @@ namespace DoAn_QuanLyShopThoiTrang
             ucDonNhapHang uc = new ucDonNhapHang();
             this.container.Controls.Add(uc);
         }
+
+        private void accordionControlElementPhanQuyen_Click(object sender, EventArgs e)
+        {
+            AccordionControlElement ctr = (AccordionControlElement)sender;
+            this.itemNav.Caption = $"{ctr.Text}";
+            this.container.Controls.Clear();
+            ucPhanQuyen uc = new ucPhanQuyen();
+            this.container.Controls.Add(uc);
+        }
     }
 }

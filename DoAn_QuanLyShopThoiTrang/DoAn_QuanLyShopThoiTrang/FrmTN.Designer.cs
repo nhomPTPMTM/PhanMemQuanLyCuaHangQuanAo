@@ -52,6 +52,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementLogOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.accordionControlElementPhanQuyen = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -112,6 +113,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.accordionControlElementQLSanPham,
             this.accordionControlElementQLNhapHang,
             this.accordionControlElement3,
+            this.accordionControlElementPhanQuyen,
             this.accordionControlElementLogOut});
             this.accordionControl1.Location = new System.Drawing.Point(0, 31);
             this.accordionControl1.Name = "accordionControl1";
@@ -294,6 +296,15 @@ namespace DoAn_QuanLyShopThoiTrang
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.itemNav);
             // 
+            // accordionControlElementPhanQuyen
+            // 
+            this.accordionControlElementPhanQuyen.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accordionControlElementPhanQuyen.Appearance.Normal.Options.UseFont = true;
+            this.accordionControlElementPhanQuyen.Name = "accordionControlElementPhanQuyen";
+            this.accordionControlElementPhanQuyen.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElementPhanQuyen.Text = "Phân quyền hệ thống";
+            this.accordionControlElementPhanQuyen.Click += new System.EventHandler(this.accordionControlElementPhanQuyen_Click);
+            // 
             // FrmTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,5 +351,6 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementTatCaSP;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementThongKe;
         private ucHome ucHome1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementPhanQuyen;
     }
 }

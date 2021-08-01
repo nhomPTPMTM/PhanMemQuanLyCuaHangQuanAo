@@ -358,3 +358,4 @@ E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopTho
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\bin\Debug\ja\DevExpress.XtraSpreadsheet.v19.2.resources.dll
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\bin\Debug\ru\DevExpress.XtraSpreadsheet.v19.2.resources.dll
 E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.ucDonNhapHang.resources
+E:\GitHub\PhanMemQuanLyCuaHangQuanAo\DoAn_QuanLyShopThoiTrang\DoAn_QuanLyShopThoiTrang\obj\Debug\DoAn_QuanLyShopThoiTrang.ucPhanQuyen.resources
