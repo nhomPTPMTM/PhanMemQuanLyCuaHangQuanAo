@@ -109,7 +109,7 @@ namespace DoAn_QuanLyShopThoiTrang
             else
             {
                 sheet.Cells["A5"].Value = "Tháng " + DateTime.Now.ToString("MM/yyyy");
-                sheet.Cells["D8"].Value = "Ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
+                sheet.Cells["D9"].Value = "Ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year;
             }
         }
         private List<ThongKe> getData()

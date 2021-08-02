@@ -30,11 +30,11 @@ namespace DoAn_QuanLyShopThoiTrang
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucThuNgan));
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grvCTHoaDon = new DevExpress.XtraGrid.GridControl();
             this.chiTietDonBanHangsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,13 +94,11 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ThanhTienTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.MaDonHangLookUpEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.KhuyenMaiSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.MaKhachHangTextEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForThanhTien = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ItemForKhuyenMai = new DevExpress.XtraLayout.LayoutControlItem();
             this.MaKhachHangLookUpEdit = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -135,13 +133,11 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolstripmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ThanhTienTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaDonHangLookUpEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KhuyenMaiSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangLookUpEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
@@ -158,10 +154,10 @@ namespace DoAn_QuanLyShopThoiTrang
             // grvCTHoaDon
             // 
             this.grvCTHoaDon.DataSource = this.chiTietDonBanHangsBindingSource;
-            gridLevelNode2.LevelTemplate = this.gridView3;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.LevelTemplate = this.gridView3;
+            gridLevelNode1.RelationName = "Level1";
             this.grvCTHoaDon.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.grvCTHoaDon.Location = new System.Drawing.Point(12, 12);
             this.grvCTHoaDon.MainView = this.gridView2;
             this.grvCTHoaDon.Name = "grvCTHoaDon";
@@ -655,7 +651,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRow(this.groupControl2, 3);
             this.groupControl2.Size = new System.Drawing.Size(1017, 293);
             this.groupControl2.TabIndex = 5;
-            this.groupControl2.Text = "Giỏ hàng";
+            this.groupControl2.Text = "Hóa đơn";
             // 
             // dataLayoutControl1
             // 
@@ -663,7 +659,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.dataLayoutControl1.Controls.Add(this.grvCTHoaDon);
             this.dataLayoutControl1.Controls.Add(this.ThanhTienTextEdit);
             this.dataLayoutControl1.Controls.Add(this.MaDonHangLookUpEdit);
-            this.dataLayoutControl1.Controls.Add(this.KhuyenMaiSpinEdit);
             this.dataLayoutControl1.Controls.Add(this.MaKhachHangTextEdit);
             this.dataLayoutControl1.DataMember = null;
             this.dataLayoutControl1.DataSource = this.hoaDonBanHangBindingSource;
@@ -784,36 +779,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.MaDonHangLookUpEdit.TabIndex = 8;
             this.MaDonHangLookUpEdit.EditValueChanged += new System.EventHandler(this.MaDonHangTextEdit_EditValueChanged);
             // 
-            // KhuyenMaiSpinEdit
-            // 
-            this.KhuyenMaiSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hoaDonBanHangBindingSource, "KhuyenMai", true));
-            this.KhuyenMaiSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.KhuyenMaiSpinEdit.Location = new System.Drawing.Point(597, 135);
-            this.KhuyenMaiSpinEdit.Name = "KhuyenMaiSpinEdit";
-            this.KhuyenMaiSpinEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.KhuyenMaiSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KhuyenMaiSpinEdit.Properties.Appearance.Options.UseFont = true;
-            this.KhuyenMaiSpinEdit.Properties.Appearance.Options.UseTextOptions = true;
-            this.KhuyenMaiSpinEdit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.KhuyenMaiSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.KhuyenMaiSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.KhuyenMaiSpinEdit.Properties.Mask.EditMask = "P0";
-            this.KhuyenMaiSpinEdit.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.KhuyenMaiSpinEdit.Properties.MaxValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.KhuyenMaiSpinEdit.Size = new System.Drawing.Size(392, 26);
-            this.KhuyenMaiSpinEdit.StyleController = this.dataLayoutControl1;
-            this.KhuyenMaiSpinEdit.TabIndex = 10;
-            this.KhuyenMaiSpinEdit.EditValueChanged += new System.EventHandler(this.KhuyenMaiTextEdit_EditValueChanged);
-            // 
             // MaKhachHangTextEdit
             // 
             this.MaKhachHangTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.hoaDonBanHangBindingSource, "MaKhachHang", true));
@@ -837,17 +802,17 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlItem2});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition3.Width = 496D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition4.Width = 497D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1.Width = 496D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition2.Width = 497D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition3,
-            columnDefinition4});
-            rowDefinition2.Height = 248D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1,
+            columnDefinition2});
+            rowDefinition1.Height = 248D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2});
+            rowDefinition1});
             this.Root.Size = new System.Drawing.Size(1013, 268);
             this.Root.TextVisible = false;
             // 
@@ -858,7 +823,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.ItemForThanhTien,
             this.layoutControlItem1,
-            this.ItemForKhuyenMai,
             this.MaKhachHangLookUpEdit,
             this.layoutControlItem6,
             this.emptySpaceItem1});
@@ -889,16 +853,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.layoutControlItem1.Text = "Ma Don Hang";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(74, 13);
             // 
-            // ItemForKhuyenMai
-            // 
-            this.ItemForKhuyenMai.Control = this.KhuyenMaiSpinEdit;
-            this.ItemForKhuyenMai.Location = new System.Drawing.Point(0, 90);
-            this.ItemForKhuyenMai.Name = "ItemForKhuyenMai";
-            this.ItemForKhuyenMai.OptionsTableLayoutItem.RowIndex = 1;
-            this.ItemForKhuyenMai.Size = new System.Drawing.Size(473, 30);
-            this.ItemForKhuyenMai.Text = "Khuyen Mai";
-            this.ItemForKhuyenMai.TextSize = new System.Drawing.Size(74, 13);
-            // 
             // MaKhachHangLookUpEdit
             // 
             this.MaKhachHangLookUpEdit.Control = this.MaKhachHangTextEdit;
@@ -920,9 +874,9 @@ namespace DoAn_QuanLyShopThoiTrang
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 90);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(473, 40);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(473, 70);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -959,9 +913,9 @@ namespace DoAn_QuanLyShopThoiTrang
             this.lblLoai.Location = new System.Drawing.Point(400, 178);
             this.lblLoai.Name = "lblLoai";
             this.tablePanel1.SetRow(this.lblLoai, 1);
-            this.lblLoai.Size = new System.Drawing.Size(238, 42);
+            this.lblLoai.Size = new System.Drawing.Size(162, 42);
             this.lblLoai.TabIndex = 3;
-            this.lblLoai.Text = "labelControl6";
+            this.lblLoai.Text = "Thu ngân";
             // 
             // khachHangsBindingSource
             // 
@@ -1005,13 +959,11 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolstripmenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ThanhTienTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaDonHangLookUpEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KhuyenMaiSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForThanhTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemForKhuyenMai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaKhachHangLookUpEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
@@ -1051,13 +1003,11 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.TextEdit ThanhTienTextEdit;
         private DevExpress.XtraEditors.LookUpEdit MaDonHangLookUpEdit;
-        private DevExpress.XtraEditors.SpinEdit KhuyenMaiSpinEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem ItemForThanhTien;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem ItemForKhuyenMai;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private DevExpress.XtraEditors.LabelControl lblLoai;
         private System.Windows.Forms.BindingSource khachHangsBindingSource;

@@ -177,7 +177,7 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if (hoaDonBLL_DAL.ThanhToan(lblMaDH.Text, double.Parse(txtThanhTien.Text), int.Parse(spinEditKhuyenMai.EditValue.ToString())))
+            if (hoaDonBLL_DAL.ThanhToan(lblMaDH.Text, double.Parse(txtThanhTien.Text), 0))
             {
                 MessageBox.Show("Thanh toán thành công");
                 grv_HoaDon.DataSource= grv_HoaDon.DataSource = hoaDonBLL_DAL.getBillsCreating();
@@ -186,11 +186,6 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void spinEditKhuyenMai_EditValueChanged(object sender, EventArgs e)
         {
-            if ((double)spinEditKhuyenMai.Value > 0)
-            {
-                double thanhTien = (double)hoaDonBLL_DAL.getSelectedHD(lblMaDH.Text).ThanhTien;
-                txtThanhTien.Text = (thanhTien * (100 - (double)spinEditKhuyenMai.Value) / 100) + "";
-            }
         }
 
         private void spinEditSoLuong_EditValueChanged(object sender, EventArgs e)

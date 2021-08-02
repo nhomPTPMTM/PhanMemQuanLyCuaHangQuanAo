@@ -41,14 +41,11 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.cboKhachHang = new DevExpress.XtraEditors.LookUpEdit();
             this.khachHangsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spinEditKhuyenMai = new DevExpress.XtraEditors.SpinEdit();
             this.txtThanhTien = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
-            this.btnCapNhatSoLuong = new DevExpress.XtraEditors.SimpleButton();
             this.spinEditSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.lblTenSP = new DevExpress.XtraEditors.LabelControl();
             this.lblDonGia = new DevExpress.XtraEditors.LabelControl();
@@ -56,6 +53,7 @@ namespace DoAn_QuanLyShopThoiTrang
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.btnCapNhatSoLuong = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.lblMaDH = new DevExpress.XtraEditors.LabelControl();
@@ -80,7 +78,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEditKhuyenMai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -111,9 +108,7 @@ namespace DoAn_QuanLyShopThoiTrang
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 10F)});
             this.tablePanel1.Controls.Add(this.toolStrip1);
             this.tablePanel1.Controls.Add(this.cboKhachHang);
-            this.tablePanel1.Controls.Add(this.spinEditKhuyenMai);
             this.tablePanel1.Controls.Add(this.txtThanhTien);
-            this.tablePanel1.Controls.Add(this.labelControl10);
             this.tablePanel1.Controls.Add(this.labelControl9);
             this.tablePanel1.Controls.Add(this.labelControl8);
             this.tablePanel1.Controls.Add(this.groupControl3);
@@ -230,30 +225,6 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             this.khachHangsBindingSource.DataSource = typeof(BLL_DAL.KhachHang);
             // 
-            // spinEditKhuyenMai
-            // 
-            this.tablePanel1.SetColumn(this.spinEditKhuyenMai, 3);
-            this.spinEditKhuyenMai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spinEditKhuyenMai.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spinEditKhuyenMai.Location = new System.Drawing.Point(220, 707);
-            this.spinEditKhuyenMai.Name = "spinEditKhuyenMai";
-            this.spinEditKhuyenMai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEditKhuyenMai.Properties.Mask.EditMask = "P0";
-            this.spinEditKhuyenMai.Properties.MaxValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.tablePanel1.SetRow(this.spinEditKhuyenMai, 13);
-            this.spinEditKhuyenMai.Size = new System.Drawing.Size(160, 24);
-            this.spinEditKhuyenMai.TabIndex = 16;
-            this.spinEditKhuyenMai.EditValueChanged += new System.EventHandler(this.spinEditKhuyenMai_EditValueChanged);
-            // 
             // txtThanhTien
             // 
             this.tablePanel1.SetColumn(this.txtThanhTien, 3);
@@ -264,19 +235,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRow(this.txtThanhTien, 11);
             this.txtThanhTien.Size = new System.Drawing.Size(160, 24);
             this.txtThanhTien.TabIndex = 15;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl10, 1);
-            this.labelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelControl10.Location = new System.Drawing.Point(30, 707);
-            this.labelControl10.Name = "labelControl10";
-            this.tablePanel1.SetRow(this.labelControl10, 13);
-            this.labelControl10.Size = new System.Drawing.Size(154, 24);
-            this.labelControl10.TabIndex = 13;
-            this.labelControl10.Text = "Khuyến mãi:";
             // 
             // labelControl9
             // 
@@ -350,22 +308,6 @@ namespace DoAn_QuanLyShopThoiTrang
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 30F)});
             this.tablePanel2.Size = new System.Drawing.Size(528, 306);
             this.tablePanel2.TabIndex = 13;
-            // 
-            // btnCapNhatSoLuong
-            // 
-            this.btnCapNhatSoLuong.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhatSoLuong.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.btnCapNhatSoLuong, 2);
-            this.tablePanel2.SetColumnSpan(this.btnCapNhatSoLuong, 2);
-            this.btnCapNhatSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCapNhatSoLuong.Enabled = false;
-            this.btnCapNhatSoLuong.Location = new System.Drawing.Point(230, 263);
-            this.btnCapNhatSoLuong.Name = "btnCapNhatSoLuong";
-            this.tablePanel2.SetRow(this.btnCapNhatSoLuong, 6);
-            this.btnCapNhatSoLuong.Size = new System.Drawing.Size(189, 40);
-            this.btnCapNhatSoLuong.TabIndex = 9;
-            this.btnCapNhatSoLuong.Text = "Cập nhật số lượng";
-            this.btnCapNhatSoLuong.Click += new System.EventHandler(this.btnCapNhatSoLuong_Click);
             // 
             // spinEditSoLuong
             // 
@@ -470,6 +412,22 @@ namespace DoAn_QuanLyShopThoiTrang
             this.labelControl5.Size = new System.Drawing.Size(106, 24);
             this.labelControl5.TabIndex = 2;
             this.labelControl5.Text = "Đơn giá:";
+            // 
+            // btnCapNhatSoLuong
+            // 
+            this.btnCapNhatSoLuong.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhatSoLuong.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.btnCapNhatSoLuong, 2);
+            this.tablePanel2.SetColumnSpan(this.btnCapNhatSoLuong, 2);
+            this.btnCapNhatSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCapNhatSoLuong.Enabled = false;
+            this.btnCapNhatSoLuong.Location = new System.Drawing.Point(230, 263);
+            this.btnCapNhatSoLuong.Name = "btnCapNhatSoLuong";
+            this.tablePanel2.SetRow(this.btnCapNhatSoLuong, 6);
+            this.btnCapNhatSoLuong.Size = new System.Drawing.Size(189, 40);
+            this.btnCapNhatSoLuong.TabIndex = 9;
+            this.btnCapNhatSoLuong.Text = "Cập nhật số lượng";
+            this.btnCapNhatSoLuong.Click += new System.EventHandler(this.btnCapNhatSoLuong_Click);
             // 
             // labelControl6
             // 
@@ -676,7 +634,6 @@ namespace DoAn_QuanLyShopThoiTrang
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEditKhuyenMai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -724,10 +681,8 @@ namespace DoAn_QuanLyShopThoiTrang
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton btnCapNhatSoLuong;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SpinEdit spinEditKhuyenMai;
         private DevExpress.XtraEditors.TextEdit txtThanhTien;
         private DevExpress.XtraEditors.LabelControl lblMaDH;
         private DevExpress.XtraEditors.SpinEdit spinEditSoLuong;

@@ -30,7 +30,7 @@ namespace DoAn_QuanLyShopThoiTrang
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucQLHoaDonDaBan));
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,10 +100,10 @@ namespace DoAn_QuanLyShopThoiTrang
             this.grv_HoaDonDaBan.DataMember = null;
             this.grv_HoaDonDaBan.DataSource = this.hoaDonBanHangsBindingSource;
             this.grv_HoaDonDaBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.LevelTemplate = this.gridView2;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.LevelTemplate = this.gridView2;
+            gridLevelNode2.RelationName = "Level1";
             this.grv_HoaDonDaBan.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.grv_HoaDonDaBan.Location = new System.Drawing.Point(2, 23);
             this.grv_HoaDonDaBan.MainView = this.gridView1;
             this.grv_HoaDonDaBan.Name = "grv_HoaDonDaBan";
@@ -187,8 +187,6 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             this.colKhuyenMai.FieldName = "KhuyenMai";
             this.colKhuyenMai.Name = "colKhuyenMai";
-            this.colKhuyenMai.Visible = true;
-            this.colKhuyenMai.VisibleIndex = 5;
             // 
             // colTrangThai
             // 
@@ -249,14 +247,14 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel1.SetRow(this.groupControl3, 3);
             this.groupControl3.Size = new System.Drawing.Size(547, 376);
             this.groupControl3.TabIndex = 3;
-            this.groupControl3.Text = "Sản phẩm";
+            this.groupControl3.Text = "Chi tiết hóa đơn";
             // 
             // tablePanel2
             // 
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 74.73F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 35.07F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 43.9F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 80.19F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 38.97F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 34.54F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 49.35F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 6.95F)});
             this.tablePanel2.Controls.Add(this.lblTenSP);
@@ -284,25 +282,31 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             // lblTenSP
             // 
+            this.lblTenSP.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSP.Appearance.Options.UseFont = true;
             this.tablePanel2.SetColumn(this.lblTenSP, 2);
             this.tablePanel2.SetColumnSpan(this.lblTenSP, 2);
-            this.lblTenSP.Location = new System.Drawing.Point(287, 38);
+            this.lblTenSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTenSP.Location = new System.Drawing.Point(311, 28);
             this.lblTenSP.Name = "lblTenSP";
             this.tablePanel2.SetRow(this.lblTenSP, 1);
-            this.lblTenSP.Size = new System.Drawing.Size(63, 13);
+            this.lblTenSP.Size = new System.Drawing.Size(211, 34);
             this.lblTenSP.TabIndex = 6;
             this.lblTenSP.Text = "labelControl6";
             // 
             // lblDonGia
             // 
+            this.lblDonGia.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDonGia.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblDonGia.Appearance.Options.UseFont = true;
             this.lblDonGia.Appearance.Options.UseForeColor = true;
             this.tablePanel2.SetColumn(this.lblDonGia, 2);
             this.tablePanel2.SetColumnSpan(this.lblDonGia, 2);
-            this.lblDonGia.Location = new System.Drawing.Point(287, 76);
+            this.lblDonGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDonGia.Location = new System.Drawing.Point(311, 68);
             this.lblDonGia.Name = "lblDonGia";
             this.tablePanel2.SetRow(this.lblDonGia, 2);
-            this.lblDonGia.Size = new System.Drawing.Size(63, 13);
+            this.lblDonGia.Size = new System.Drawing.Size(211, 29);
             this.lblDonGia.TabIndex = 8;
             this.lblDonGia.Text = "labelControl8";
             // 
@@ -310,10 +314,11 @@ namespace DoAn_QuanLyShopThoiTrang
             // 
             this.tablePanel2.SetColumn(this.lblSoLuong, 2);
             this.tablePanel2.SetColumnSpan(this.lblSoLuong, 2);
-            this.lblSoLuong.Location = new System.Drawing.Point(287, 118);
+            this.lblSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSoLuong.Location = new System.Drawing.Point(311, 103);
             this.lblSoLuong.Name = "lblSoLuong";
             this.tablePanel2.SetRow(this.lblSoLuong, 3);
-            this.lblSoLuong.Size = new System.Drawing.Size(63, 13);
+            this.lblSoLuong.Size = new System.Drawing.Size(211, 43);
             this.lblSoLuong.TabIndex = 7;
             this.lblSoLuong.Text = "labelControl7";
             // 
@@ -322,72 +327,75 @@ namespace DoAn_QuanLyShopThoiTrang
             this.tablePanel2.SetColumn(this.memoEditMoTa, 2);
             this.tablePanel2.SetColumnSpan(this.memoEditMoTa, 3);
             this.memoEditMoTa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memoEditMoTa.Location = new System.Drawing.Point(287, 152);
+            this.memoEditMoTa.Location = new System.Drawing.Point(311, 152);
             this.memoEditMoTa.Name = "memoEditMoTa";
             this.memoEditMoTa.Properties.ReadOnly = true;
             this.tablePanel2.SetRow(this.memoEditMoTa, 4);
             this.tablePanel2.SetRowSpan(this.memoEditMoTa, 2);
-            this.memoEditMoTa.Size = new System.Drawing.Size(253, 137);
+            this.memoEditMoTa.Size = new System.Drawing.Size(229, 137);
             this.memoEditMoTa.TabIndex = 12;
             // 
             // pictureEdit1
             // 
             this.tablePanel2.SetColumn(this.pictureEdit1, 0);
-            this.pictureEdit1.Location = new System.Drawing.Point(3, 31);
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(3, 3);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.tablePanel2.SetRow(this.pictureEdit1, 0);
-            this.tablePanel2.SetRowSpan(this.pictureEdit1, 7);
-            this.pictureEdit1.Size = new System.Drawing.Size(187, 289);
+            this.tablePanel2.SetRowSpan(this.pictureEdit1, 6);
+            this.pictureEdit1.Size = new System.Drawing.Size(201, 286);
             this.pictureEdit1.TabIndex = 0;
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseTextOptions = true;
-            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.tablePanel2.SetColumn(this.labelControl1, 1);
-            this.labelControl1.Location = new System.Drawing.Point(196, 38);
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl1.Location = new System.Drawing.Point(210, 28);
             this.labelControl1.Name = "labelControl1";
             this.tablePanel2.SetRow(this.labelControl1, 1);
-            this.labelControl1.Size = new System.Drawing.Size(82, 13);
+            this.labelControl1.Size = new System.Drawing.Size(95, 34);
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Tên sản phẩm:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.tablePanel2.SetColumn(this.labelControl2, 1);
-            this.labelControl2.Location = new System.Drawing.Point(196, 76);
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl2.Location = new System.Drawing.Point(210, 68);
             this.labelControl2.Name = "labelControl2";
             this.tablePanel2.SetRow(this.labelControl2, 2);
-            this.labelControl2.Size = new System.Drawing.Size(46, 13);
+            this.labelControl2.Size = new System.Drawing.Size(95, 29);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Đơn giá:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.tablePanel2.SetColumn(this.labelControl3, 1);
-            this.labelControl3.Location = new System.Drawing.Point(196, 118);
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl3.Location = new System.Drawing.Point(210, 103);
             this.labelControl3.Name = "labelControl3";
             this.tablePanel2.SetRow(this.labelControl3, 3);
-            this.labelControl3.Size = new System.Drawing.Size(80, 13);
+            this.labelControl3.Size = new System.Drawing.Size(95, 43);
             this.labelControl3.TabIndex = 3;
             this.labelControl3.Text = "Số lượng mua:";
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.tablePanel2.SetColumn(this.labelControl5, 1);
-            this.labelControl5.Location = new System.Drawing.Point(196, 178);
+            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl5.Location = new System.Drawing.Point(210, 152);
             this.labelControl5.Name = "labelControl5";
             this.tablePanel2.SetRow(this.labelControl5, 4);
-            this.labelControl5.Size = new System.Drawing.Size(35, 13);
+            this.labelControl5.Size = new System.Drawing.Size(95, 65);
             this.labelControl5.TabIndex = 5;
             this.labelControl5.Text = "Mô tả:";
             // 

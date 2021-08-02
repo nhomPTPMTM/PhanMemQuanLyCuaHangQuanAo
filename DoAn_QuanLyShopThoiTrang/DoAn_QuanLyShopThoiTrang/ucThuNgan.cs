@@ -154,7 +154,7 @@ namespace DoAn_QuanLyShopThoiTrang
             }
             if (hoaDonBLL_DAL.InsertHoaDon(hd))
             {
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Tạo hóa đơn thành công");
                 MaDonHangLookUpEdit.Properties.DataSource= hoaDonBLL_DAL.loadDonBanHang(MaKhachHangTextEdit.EditValue.ToString()).ToList(); ;
                 MaDonHangLookUpEdit.Properties.ValueMember = "MaDonHang";
                 MaDonHangLookUpEdit.Properties.DisplayMember = "MaDonHang";
@@ -170,11 +170,7 @@ namespace DoAn_QuanLyShopThoiTrang
                 gridView2.ShowFindPanel();
                 gridView2.OptionsFind.ShowFindButton = true;
                 ThanhTienTextEdit.Text = hoaDonBLL_DAL.getSelectedHD(MaDonHangLookUpEdit.EditValue.ToString()).ThanhTien.ToString();
-                if ((double)KhuyenMaiSpinEdit.Value > 0)
-                {
-                    double thanhTien = (double)hoaDonBLL_DAL.getSelectedHD(MaDonHangLookUpEdit.EditValue.ToString()).ThanhTien;
-                    ThanhTienTextEdit.Text = (thanhTien * (100 - (double)KhuyenMaiSpinEdit.Value) / 100) + "";
-                }
+                
 
                 Program.MaHD = MaDonHangLookUpEdit.EditValue.ToString();
             }
@@ -207,7 +203,7 @@ namespace DoAn_QuanLyShopThoiTrang
         {
             if (MaDonHangLookUpEdit.EditValue == null||(MaDonHangLookUpEdit.EditValue.ToString().Equals("")))
             {
-                MessageBox.Show("Hãy chọn đơn để thêm", "Lỗi");
+                MessageBox.Show("Hãy chọn hóa đơn để thêm chi tiết", "Lỗi");
                 return;
             }
             if (sanPhamBLL.detailSanpham(selectedSanPham.MaSanPham).SoLuongTon < int.Parse(txtSLMua.Value.ToString()))
@@ -229,7 +225,7 @@ namespace DoAn_QuanLyShopThoiTrang
             if (kqThem && kqUpdateThanhTien)
             {
 
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Đã thêm chi tiết hóa đơn thành công");
                 sanPhamBLL = new SanPhamBLL();
                 gridControl1.DataSource = sanPhamBLL.loadSanPham_ForLoai(selectedSanPham.MaLoaiSanPham).ToList<SanPham>();
                 load_grvSanPham();
@@ -240,6 +236,10 @@ namespace DoAn_QuanLyShopThoiTrang
                 load_grvChiTietHoaDon();
                 ThanhTienTextEdit.Text = hoaDonBLL_DAL.getSelectedHD(MaDonHangLookUpEdit.EditValue.ToString()).ThanhTien.ToString();
 
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi thêm chi tiết hóa đơn");
             }
         }
 
@@ -254,10 +254,10 @@ namespace DoAn_QuanLyShopThoiTrang
 
             bool kqUpdateThanhTien = hoaDonBLL_DAL.UpdateThanhTien_SoLuongTon(ct, false);
             bool kqXoa = hoaDonBLL_DAL.DeletChiTietHoaDon(ct.MaDonHang,ct.MaSanPham);
-            
+
             if (kqXoa && kqUpdateThanhTien)
             {
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Đã xóa chi tiết hóa đơn thành công");
 
                 sanPhamBLL = new SanPhamBLL();
                 gridControl1.DataSource = sanPhamBLL.loadSanPham_ForLoai(maLoai).ToList<SanPham>();
@@ -268,6 +268,10 @@ namespace DoAn_QuanLyShopThoiTrang
 
                 load_grvChiTietHoaDon();
                 ThanhTienTextEdit.Text = hoaDonBLL_DAL.getSelectedHD(MaDonHangLookUpEdit.EditValue.ToString()).ThanhTien.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi xóa chi tiết hóa đơn");
             }
         }
         private void load_grvChiTietHoaDon()
@@ -288,23 +292,24 @@ namespace DoAn_QuanLyShopThoiTrang
 
         private void KhuyenMaiTextEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if ((double)KhuyenMaiSpinEdit.Value > 0) { 
-                double thanhTien = (double)hoaDonBLL_DAL.getSelectedHD(MaDonHangLookUpEdit.EditValue.ToString()).ThanhTien;
-                ThanhTienTextEdit.Text = (thanhTien * (100-(double)KhuyenMaiSpinEdit.Value)/100) + "";
-            }
+            
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            if (hoaDonBLL_DAL.ThanhToan(MaDonHangLookUpEdit.EditValue.ToString(), double.Parse(ThanhTienTextEdit.Text),int.Parse(KhuyenMaiSpinEdit.EditValue.ToString())))
+            if (hoaDonBLL_DAL.ThanhToan(MaDonHangLookUpEdit.EditValue.ToString(), double.Parse(ThanhTienTextEdit.Text),0))
             {
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Đã thanh toán hóa đơn");
                 MaDonHangLookUpEdit.Properties.DataSource = hoaDonBLL_DAL.loadDonBanHang(MaKhachHangTextEdit.EditValue.ToString()).ToList(); ;
                 MaDonHangLookUpEdit.Properties.ValueMember = "MaDonHang";
                 MaDonHangLookUpEdit.Properties.DisplayMember = "MaDonHang";
                 MaDonHangLookUpEdit.EditValue = "";
                 load_grvChiTietHoaDon();
 
+            }
+            else
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi thanh toán hóa đơn");
             }
         }
 
