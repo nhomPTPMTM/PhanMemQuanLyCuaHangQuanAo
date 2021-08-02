@@ -85,19 +85,9 @@ namespace DoAn_QuanLyShopThoiTrang
                     table.ShowTotals = true;
                     table.Columns[3].TotalRowLabel = "TỔNG CỘNG";
                     table.Columns[0].TotalRowLabel = "";
-                    table.Columns[4].Range.NumberFormat = "$#,##0.00";
-                    // sử dụng custom style
-                    //TableStyle customTableStyle = workbook.TableStyles.Add("testTableStyle");
-                    //TableStyleElement totalRowStyle = customTableStyle.TableStyleElements[TableStyleElementType.TotalRow];
-                    //customTableStyle.BeginUpdate();
-                    //totalRowStyle.Fill.BackgroundColor = Color.Green;
-                    //totalRowStyle.Font.Color = Color.White;
-                    //totalRowStyle.Font.Bold = true;
-                    //customTableStyle.EndUpdate();
-
-                    //table.Style = customTableStyle;
-
-                    // sheet.MergeCells(sheet.Range["B2764:G2764"]);
+                    table.Columns[4].Range.NumberFormat = " #,##0_ [$VND]";
+                    table.Columns[4].Total.Font.Color = Color.Red;
+                    table.TotalRowRange.Font.Size = 14;
 
                 }
                 finally

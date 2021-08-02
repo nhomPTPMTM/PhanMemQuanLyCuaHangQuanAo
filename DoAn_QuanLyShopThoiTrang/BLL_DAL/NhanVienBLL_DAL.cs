@@ -25,5 +25,45 @@ namespace BLL_DAL
                 .Select(amh => amh.ctpq).ToList(); ;
             return lst;
         }
+        public bool InsertPhanCong(BangPhanCong pc)
+        {
+            try
+            {
+                if (dbContext.BangPhanCongs.SingleOrDefault(p => p.MaNhanVien == pc.MaNhanVien && p.MaPhanQuyen == pc.MaNhanVien) != null)
+                {
+                    return false;
+                }
+                dbContext.BangPhanCongs.InsertOnSubmit(pc);
+                dbContext.SubmitChanges();
+                return true;
+            }
+            catch {
+                return false;
+            }
+        }
+        public bool Remove_PhanCong(string maPC)
+        {
+            try
+            {
+               BangPhanCong pc=dbContext.BangPhanCongs.SingleOrDefault(p => p.MaPhanCong==maPC);
+               if (pc!=null)
+               {
+                   dbContext.BangPhanCongs.DeleteOnSubmit(pc);
+                   dbContext.SubmitChanges();
+                   return true;
+               }
+               else {
+                   return false;
+               }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public BangPhanCong getLastPhanCong()
+        {
+            return dbContext.BangPhanCongs.ToList().LastOrDefault();
+        }
     }
 }
